@@ -19,13 +19,14 @@ This file is for Claude Code. Read this at the start of every session before doi
 **Live site:** https://elahehahmadi.com
 **GitHub repo:** https://github.com/elahea2020/elahehahmadi.com
 **GitHub username:** elahea2020
-**Hosting:** GitHub Pages (free), auto-deploys on every push to `main`
+**Hosting:** GitHub Pages (free, public repo), auto-deploys on every push to `main`
 **Domain:** elahehahmadi.com (registered at GoDaddy, DNS pointed to GitHub Pages)
 
 ### How the site works
-- `index.html` loads all content dynamically from JSON files in `data/`
-- **Never edit `index.html` or `assets/` for content changes**
-- All content updates go through the four JSON files in `data/`
+- **Multi-page** static site: `index.html` (landing), `arts.html`, `blogs.html`, `projects.html`
+- All pages load content dynamically from JSON files in `data/`
+- `assets/js/main.js` reads `<body data-page="...">` and only fetches the JSON each page needs
+- **Never edit HTML or CSS for content changes** — all content lives in `data/*.json`
 - Push to `main` → GitHub Actions deploys in ~30 seconds
 
 ---
@@ -34,26 +35,42 @@ This file is for Claude Code. Read this at the start of every session before doi
 
 ```
 elahehahmadi.com/
-├── index.html              ← site shell, do not edit for content
+├── index.html              ← landing: hero, about, awards, pubs, talks, ventures, contact
+├── arts.html               ← photography gallery
+├── blogs.html              ← article series (currently unlinked from nav — adding content later)
+├── projects.html           ← ventures + research projects
 ├── CLAUDE.md               ← site-specific instructions
 ├── MEMORY.md               ← this file
 ├── README.md               ← setup docs
 ├── CNAME                   ← contains: elahehahmadi.com
-├── .gitignore
+├── .gitignore              ← also ignores photos/_originals/
 ├── assets/
-│   ├── css/style.css       ← all styles (warm/artistic aesthetic)
-│   └── js/main.js          ← loads JSON, renders everything
+│   ├── css/style.css       ← black & white dark theme
+│   ├── js/main.js          ← multi-page renderer
+│   └── images/
+│       └── elahe-solve.jpg ← hero photo on landing
 ├── data/                   ← EDIT THESE for all content
-│   ├── profile.json        ← bio, roles, awards, publications, links, formspree ID
+│   ├── profile.json        ← bio, roles, awards, publications, talks, links, web3forms key
+│   ├── projects.json       ← ventures (VIVA, Themis) + research projects
 │   ├── photos.json         ← gallery photos by category
-│   ├── articles.json       ← article series + individual articles
-│   └── education.json      ← educational resources
-└── photos/                 ← actual image files
-    ├── portrait/
-    ├── landscape/
+│   ├── articles.json       ← article series (page is hidden but data preserved)
+│   └── education.json      ← educational resources (section commented out)
+└── photos/                 ← compressed image files (max 1600px)
+    ├── nature/
     ├── urban/
-    └── abstract/
+    ├── portrait/
+    ├── abstract/
+    └── _originals/         ← pre-compression backups (gitignored)
 ```
+
+---
+
+## Page Contents
+
+- **`index.html`** (landing): hero with `elahe-solve.jpg`, About (bio/awards/publications/talks), Ventures preview, Contact form. Education section is in the markup but HTML-commented; uncomment when materials are ready.
+- **`arts.html`**: photography gallery with filter buttons (All / Nature / Urban / Portrait / Abstract).
+- **`blogs.html`**: article series. **Currently unlinked from nav and footer** — uncomment the `<li><a href="blogs.html">Writing</a></li>` lines across the four HTML files when articles are ready.
+- **`projects.html`**: full ventures grid + research project list.
 
 ---
 
@@ -64,58 +81,73 @@ elahehahmadi.com/
 - `roles` — array of role strings (shown in hero + sidebar)
 - `awards` — array of `{ title, year }`
 - `publications` — array of `{ venue, title, url }`
-- `links` — array of `{ label, url }` (shown in nav sidebar + contact + footer)
-- `contact.formspree_id` — set to Formspree form ID for contact form emails
+- `talks` — array of `{ venue, title, url }` (renders below publications on landing)
+- `links` — array of `{ label, url }` (drives About sidebar + footer Contact column + landing Contact section)
+- `contact.web3forms_key` — Web3Forms access key for contact form
+
+### Projects (`data/projects.json`)
+- `ventures` — array of `{ id, name, role, tagline, description, url, year }` (companies)
+- `research` — array of `{ id, title, summary, venue, url, year }` (papers / open-source / patents)
 
 ### Photography (`data/photos.json`)
-- `categories` — array of category name strings; adding one here auto-creates a filter button
+- `categories` — array of category name strings; adding one auto-creates a filter button (multi-word like `"street photography"` works — title-cased automatically in UI)
 - `photos` — array of photo objects:
   ```json
   {
-    "id": "p005",
-    "category": "portrait",
-    "caption": "Description — Location, Year",
-    "url": "photos/portrait/filename.jpg",
-    "width": 1200,
-    "height": 1600,
-    "date": "2024-06-01"
+    "id": "p031",
+    "category": "nature",
+    "caption": "Description",
+    "url": "photos/nature/filename.jpg",
+    "width": 1600,
+    "height": 1065
   }
   ```
-- For large photos (>2MB): compress first (use ImageOptim or Squoosh)
-- For large libraries (>800MB total): upload to Cloudflare R2, use public URL instead of local path
-- Photo files go in `photos/<category>/` folder
+- `_archived_photos` — for entries that shouldn't display but shouldn't be deleted
+- Photos auto-compress workflow: drop original into `photos/<category>/`, run `sips --resampleHeightWidthMax 1600 -s formatOptions 80 <file>` to compress in place
+- Originals backup lives in `photos/_originals/` (gitignored)
 
 ### Articles (`data/articles.json`)
 - `series` — array of series objects
-- Each series has: `id`, `number` (e.g. "01"), `tag`, `title`, `description`, `articles[]`
+- Each series: `id`, `number` (e.g. "01"), `tag`, `title`, `description`, `articles[]`
 - Each article: `{ title, url, date }`
-- To add an article to an existing series: find the series by `id`, append to its `articles` array
-- To add a new series: append a new object to `series` with next sequential `id` and `number`
+- Page is currently unlinked from nav until content is ready
 
 ### Education (`data/education.json`)
 - `resources` — array of `{ id, roman, title, description, url }`
-- `roman` is the Roman numeral label (I., II., III., etc.)
-- `url` can be `"#"` as a placeholder until the resource has a real link
+- Section is HTML-commented in `index.html` — uncomment the `<section id="education">` block when ready
 
 ---
 
 ## Design System
 
-**Aesthetic:** Warm, gallery-like, organic — NOT minimal/corporate
+**Aesthetic:** Black & white dark — editorial / gallery feel
 **Fonts:** Cormorant Garamond (headings, serif) + DM Sans (body, UI)
-**Color palette:**
-- `--cream: #F8F4EE`
-- `--warm-white: #FDFAF6`
-- `--sand: #E8DDD0`
-- `--clay: #C4A882`
-- `--terra: #8B6B4A`
-- `--bark: #4A3728` ← primary dark
-- `--ink: #1E1410`
-- `--mist: #D4C9BC`
-- `--rust: #A85A3C` ← accent
+**Color tokens (CSS vars in `assets/css/style.css`):**
+- `--bg: #0a0a0a` ← page background
+- `--bg-alt: #131313` ← elevated section bg
+- `--bg-elev: #1a1a1a`
+- `--line: #262626` ← borders
+- `--text: #f5f5f5` ← primary text
+- `--text-mute: #b8b8b8` ← secondary text
+- `--text-dim: #7a7a7a` ← labels, captions
+- `--text-faint: #4a4a4a`
+- `--accent: #ffffff`
 
-**Sections:** Hero → About → Photography → Writing → Education → Contact
-**Contact form:** Uses Formspree. Set `formspree_id` in `data/profile.json`.
+**Images:** displayed with `filter: grayscale(1) contrast(1.05)` to keep them on-theme; colored originals work fine.
+
+**Sections on landing:** Hero → About → Ventures → (Education, commented) → Contact
+
+---
+
+## Contact Form
+
+Uses **Web3Forms** (free tier, unlimited submissions). Lives only on the landing page.
+
+- Access key is set in `data/profile.json` → `contact.web3forms_key`
+- The key is in client-side JSON (visible in browser), so the key is **locked to allowed domains** in the Web3Forms dashboard — that's what prevents abuse, not hiding the key.
+- Allowed domains should include: `elahehahmadi.com`, `www.elahehahmadi.com`, `elahea2020.github.io`, `localhost`
+
+To swap to a different form provider, edit `setupContactForm` in `assets/js/main.js`.
 
 ---
 
@@ -131,38 +163,41 @@ git push
 # Site goes live at elahehahmadi.com in ~30 seconds
 ```
 
-### Example prompts Elaheh might use with Claude Code
+### Example prompts Elaheh might use
 - "Add my new article about AI safety to series 1"
 - "Create a new article series about robotics, no articles yet"
-- "Add these 3 photos to the portrait category: [files]"
-- "Update my bio to add a new paragraph about VIVA AI"
-- "Add a new award: MIT Innovator Under 35, 2024"
-- "Add a new publication: [venue, title, url]"
-- "Add a new education resource called X about Y"
-- "Change the description of series 2"
+- "Add these 3 photos to the nature category: [files]"
+- "Compress the new photos"
+- "Add a new venture / research project to projects.json"
+- "Add a new talk: [venue, title, YouTube URL]"
+- "Update bio to add a paragraph about VIVA AI"
+- "Add a new award"
+- "Re-enable the Writing page in the nav"
+- "Re-enable the Education section on the landing page"
 
 ---
 
 ## Things to Never Do
 
-- Do not edit `index.html` for content — edit JSON files only
+- Do not edit HTML/CSS for content — edit JSON files only
 - Do not edit `assets/css/style.css` unless Elaheh explicitly asks for a design change
-- Do not commit photos larger than 2MB without compressing first
-- Do not delete existing JSON entries — comment them out or archive if needed
-- Do not change the `id` field of existing JSON entries (it will break things)
+- Do not commit photos larger than ~500KB without compressing first (use the `sips` workflow above)
+- Do not delete existing JSON entries — move to an `_archived_*` field
+- Do not change the `id` field of existing JSON entries
 - Do not push directly without a descriptive commit message
+- Do not introduce colored UI accents — site is intentionally B&W
 
 ---
 
-## Pending Setup Tasks
+## Pending / Future Setup Tasks
 
-- [ ] Formspree: create account at formspree.io, get form ID, add to `data/profile.json` → `contact.formspree_id`
-- [ ] GitHub Pages: confirm GitHub Actions deployment is enabled (Settings → Pages → Source: GitHub Actions)
-- [ ] DNS: confirm GoDaddy DNS A records point to GitHub Pages IPs (185.199.108-111.153)
-- [ ] SSL: confirm HTTPS is active on elahehahmadi.com (GitHub auto-provisions, takes up to 24h)
-- [ ] Add real photos to `photos/` folders and update `data/photos.json`
-- [ ] Add real article URLs to `data/articles.json` (currently `"#"` placeholders)
-- [ ] Add hero photo: replace placeholder in `index.html` `.hero-image-placeholder` with `<img src="assets/images/elaheh.jpg">`
+- [ ] Web3Forms: confirm "Allowed Domains" is set to `elahehahmadi.com`, `www.elahehahmadi.com`, `elahea2020.github.io`, `localhost`
+- [ ] Add real Education resources and uncomment the section in `index.html`
+- [ ] Add real Writing content to `articles.json` and re-enable the Writing nav links across all four HTML files
+- [ ] Replace generic photo captions in `photos.json` with real location/title/year
+- [ ] Confirm GitHub Pages deployment is enabled (Settings → Pages → Source: GitHub Actions)
+- [ ] Confirm GoDaddy DNS A records point to GitHub Pages IPs (185.199.108-111.153)
+- [ ] Confirm HTTPS is active on elahehahmadi.com (GitHub auto-provisions)
 
 ---
 
@@ -176,5 +211,5 @@ git push
 | VIVA AI | https://getviva.ai |
 | Themis AI | https://themisai.io |
 | Google Scholar | https://scholar.google.com/citations?user=LPf5Vq0AAAAJ |
-| Formspree (contact form) | https://formspree.io |
+| Web3Forms (contact form) | https://web3forms.com |
 | Cloudflare R2 (if needed for photos) | https://dash.cloudflare.com |

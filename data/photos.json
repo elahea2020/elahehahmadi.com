@@ -1,8 +1,43 @@
 {
-  "categories": ["portrait", "landscape", "urban", "abstract"],
+  "categories": ["nature", "urban", "portrait", "abstract"],
   "photos": [
+    { "id": "p001", "category": "abstract", "caption": "Collage", "url": "photos/abstract/Collage.jpg", "width": 2048, "height": 1094 },
+    { "id": "p002", "category": "abstract", "caption": "Glowy Fish", "url": "photos/abstract/glowyfish.jpg", "width": 2048, "height": 1365 },
+    { "id": "p003", "category": "abstract", "caption": "It's Pure", "url": "photos/abstract/ItsPure.jpg", "width": 2048, "height": 1365 },
+    { "id": "p004", "category": "abstract", "caption": "Life Is Moving", "url": "photos/abstract/LifeIsMoving.jpg", "width": 6240, "height": 4160 },
+    { "id": "p005", "category": "abstract", "caption": "Nightmare", "url": "photos/abstract/NightMare.jpg", "width": 2048, "height": 1365 },
+    { "id": "p006", "category": "abstract", "caption": "Unbelievable III", "url": "photos/abstract/unblievable_3.jpg", "width": 2048, "height": 1365 },
+    { "id": "p007", "category": "abstract", "caption": "Walking in Heaven", "url": "photos/abstract/WalkingInHeaven.jpg", "width": 1365, "height": 2048 },
+    { "id": "p008", "category": "abstract", "caption": "The Way", "url": "photos/abstract/wayto.jpg", "width": 2048, "height": 1365 },
+
+    { "id": "p009", "category": "nature", "caption": "Study 16", "url": "photos/nature/16.jpg", "width": 2048, "height": 1365 },
+    { "id": "p010", "category": "nature", "caption": "Study 02", "url": "photos/nature/2.jpg", "width": 2048, "height": 1365 },
+    { "id": "p011", "category": "nature", "caption": "Study 23", "url": "photos/nature/23%202.jpg", "width": 2048, "height": 1277 },
+    { "id": "p012", "category": "nature", "caption": "Study 05", "url": "photos/nature/5.jpg", "width": 2048, "height": 1365 },
+    { "id": "p013", "category": "nature", "caption": "Tahoe", "url": "photos/nature/6_tahoe.jpg", "width": 2048, "height": 1365 },
+    { "id": "p014", "category": "nature", "caption": "Study 07", "url": "photos/nature/7.jpg", "width": 2048, "height": 1374 },
+    { "id": "p015", "category": "nature", "caption": "Another World", "url": "photos/nature/Another_world_1.jpg", "width": 2048, "height": 1365 },
+    { "id": "p016", "category": "nature", "caption": "Foggy Tree", "url": "photos/nature/foggyTree.jpg", "width": 2048, "height": 1365 },
+    { "id": "p017", "category": "nature", "caption": "Lake Cachuma", "url": "photos/nature/lakecachuma_2.jpg", "width": 2048, "height": 1274 },
+    { "id": "p018", "category": "nature", "caption": "Lightscape V", "url": "photos/nature/lightscape-5.jpg", "width": 5007, "height": 3338 },
+    { "id": "p019", "category": "nature", "caption": "Lightscape VIII", "url": "photos/nature/lightscape-8.jpg", "width": 6240, "height": 4160 },
+    { "id": "p020", "category": "nature", "caption": "Long Night", "url": "photos/nature/LongNight.jpg", "width": 2048, "height": 1187 },
+    { "id": "p021", "category": "nature", "caption": "Signature", "url": "photos/nature/signature.jpg", "width": 2048, "height": 1365 },
+    { "id": "p022", "category": "nature", "caption": "Smoky Mountain", "url": "photos/nature/SmokyMountain1.jpg", "width": 2048, "height": 1365 },
+    { "id": "p023", "category": "nature", "caption": "Starry Night — Mammoth", "url": "photos/nature/StartyNightMamooth_1.jpg", "width": 2048, "height": 1365 },
+    { "id": "p024", "category": "nature", "caption": "Yosemite Valley VII", "url": "photos/nature/YosemiteValley_7.jpg", "width": 2048, "height": 1236 },
+    { "id": "p025", "category": "nature", "caption": "Yosemite Valley IX", "url": "photos/nature/YosemiteValley_9.jpg", "width": 2048, "height": 1081 },
+
+    { "id": "p026", "category": "portrait", "caption": "I Have Wings", "url": "photos/portrait/IHaveWings.jpg", "width": 2048, "height": 1365 },
+    { "id": "p027", "category": "portrait", "caption": "Lightscape IV", "url": "photos/portrait/lightscape-4.jpg", "width": 5246, "height": 3497 },
+    { "id": "p028", "category": "portrait", "caption": "Lightscape VII", "url": "photos/portrait/lightscape-7.jpg", "width": 6240, "height": 4160 },
+
+    { "id": "p029", "category": "urban", "caption": "I Was Dead", "url": "photos/urban/IwasDead.jpg", "width": 2048, "height": 1365 },
+    { "id": "p030", "category": "urban", "caption": "Lightscape VI", "url": "photos/urban/lightscape-6.jpg", "width": 6240, "height": 4160 }
+  ],
+  "_archived_photos": [
     {
-      "id": "p001",
+      "id": "a001",
       "category": "portrait",
       "caption": "Portrait series — Boston, 2023",
       "url": "photos/portrait/placeholder.jpg",
@@ -11,7 +46,7 @@
       "date": "2023-06-01"
     },
     {
-      "id": "p002",
+      "id": "a002",
       "category": "landscape",
       "caption": "Iceland, 2022",
       "url": "photos/landscape/placeholder.jpg",
@@ -20,7 +55,7 @@
       "date": "2022-09-15"
     },
     {
-      "id": "p003",
+      "id": "a003",
       "category": "abstract",
       "caption": "Light study, MIT 2021",
       "url": "photos/abstract/placeholder.jpg",
@@ -29,7 +64,7 @@
       "date": "2021-03-10"
     },
     {
-      "id": "p004",
+      "id": "a004",
       "category": "urban",
       "caption": "Cambridge streets",
       "url": "photos/urban/placeholder.jpg",

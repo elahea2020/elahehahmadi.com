@@ -22,9 +22,9 @@ elahehahmadi.com/
 │   ├── articles.json       # Article series
 │   └── education.json      # Educational resources
 ├── photos/                 # Photo files organized by category
-│   ├── portrait/
-│   ├── landscape/
+│   ├── nature/
 │   ├── urban/
+│   ├── portrait/
 │   └── abstract/
 └── .github/workflows/      # Auto-deploy on git push
     └── deploy.yml
@@ -48,14 +48,14 @@ All pages share the same nav and footer markup. The footer contact column (`#foo
 ## How to Update Content
 
 ### Add a new photo
-1. Copy the image file into `photos/<category>/filename.jpg`
-2. Add an entry to `data/photos.json`:
+1. Copy the image file into `photos/<category>/filename.jpg` (folder names are kebab-case for multi-word categories, e.g. `photos/street-photography/`)
+2. Add an entry to `data/photos.json` (the `category` value matches the JSON `categories` array verbatim, including any spaces):
 ```json
 {
   "id": "p005",
-  "category": "portrait",
+  "category": "nature",
   "caption": "Description — Location, Year",
-  "url": "photos/portrait/filename.jpg",
+  "url": "photos/nature/filename.jpg",
   "width": 1200,
   "height": 1600,
   "date": "2024-06-01"
@@ -130,9 +130,23 @@ Add to `data/education.json` `resources` array:
 ```
 
 ### Add a new photo category
-1. Create `photos/<newcategory>/` folder
-2. Add the category name to `data/photos.json` `categories` array
+1. Create `photos/<new-category-kebab-case>/` folder
+2. Add the category name to `data/photos.json` `categories` array (multi-word names with spaces are fine — they'll title-case automatically in the UI)
 3. A filter button will appear automatically on `arts.html`
+
+---
+
+## Contact Form Setup (one-time)
+
+The contact form on `index.html` uses [Web3Forms](https://web3forms.com) (free, unlimited submissions).
+
+1. Go to https://web3forms.com and submit your email to get an access key (delivered to your inbox immediately, no signup)
+2. In `data/profile.json`, set:
+   ```json
+   "contact": { "web3forms_key": "your-access-key-here" }
+   ```
+
+Until the key is set, form submissions show a placeholder success message instead of actually emailing you.
 
 ---
 

@@ -26,6 +26,8 @@ async function init() {
     ]);
     renderVenturesGrid(projects.ventures);
     renderEducation(education);
+    renderContactLinks(profile);
+    setupContactForm(profile);
   }
   if (page === 'projects') {
     const projects = await loadJSON('data/projects.json');
@@ -239,6 +241,59 @@ function renderEducation(data) {
   `).join('');
 }
 
+// ─── CONTACT ─────────────────────────────────────────────────────────────────
+
+function renderContactLinks(p) {
+  const el = document.getElementById('contactLinks');
+  if (!el) return;
+  el.innerHTML = p.links.map(l => `
+    <div class="contact-link-row">
+      <span class="contact-link-label">${l.label}</span>
+      <a class="contact-link" href="${l.url}" target="_blank" rel="noopener">${l.url.replace(/^https?:\/\//, '')}</a>
+    </div>
+  `).join('');
+}
+
+function setupContactForm(p) {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('.contact-submit');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    const accessKey = p.contact?.web3forms_key;
+    if (!accessKey || accessKey === 'YOUR_WEB3FORMS_ACCESS_KEY') {
+      form.innerHTML = `<p class="form-success">Thanks — your message would have been sent. Set <code>contact.web3forms_key</code> in <code>data/profile.json</code> to enable real email delivery.</p>`;
+      return;
+    }
+
+    const data = new FormData(form);
+    data.append('access_key', accessKey);
+    data.append('subject', `New message from ${data.get('name') || 'website'}`);
+    data.append('from_name', 'elahehahmadi.com contact form');
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      const json = await res.json().catch(() => ({}));
+      if (res.ok && json.success !== false) {
+        form.innerHTML = `<p class="form-success">Message sent — Elaheh will be in touch soon.</p>`;
+      } else {
+        btn.textContent = 'Try again';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Try again';
+      btn.disabled = false;
+    }
+  });
+}
+
 // ─── FOOTER ──────────────────────────────────────────────────────────────────
 
 function renderFooter(p) {
@@ -259,7 +314,7 @@ function renderFooter(p) {
 // ─── UTILS ───────────────────────────────────────────────────────────────────
 
 function cap(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
+  return str.replace(/\b\w/g, c => c.toUpperCase());
 }
 
 function toggleMobileNav() {
