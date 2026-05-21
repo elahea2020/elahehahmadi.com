@@ -1,0 +1,41 @@
+{
+  "categories": ["portrait", "landscape", "urban", "abstract"],
+  "photos": [
+    {
+      "id": "p001",
+      "category": "portrait",
+      "caption": "Portrait series — Boston, 2023",
+      "url": "photos/portrait/placeholder.jpg",
+      "width": 800,
+      "height": 1200,
+      "date": "2023-06-01"
+    },
+    {
+      "id": "p002",
+      "category": "landscape",
+      "caption": "Iceland, 2022",
+      "url": "photos/landscape/placeholder.jpg",
+      "width": 1600,
+      "height": 900,
+      "date": "2022-09-15"
+    },
+    {
+      "id": "p003",
+      "category": "abstract",
+      "caption": "Light study, MIT 2021",
+      "url": "photos/abstract/placeholder.jpg",
+      "width": 1000,
+      "height": 1000,
+      "date": "2021-03-10"
+    },
+    {
+      "id": "p004",
+      "category": "urban",
+      "caption": "Cambridge streets",
+      "url": "photos/urban/placeholder.jpg",
+      "width": 1200,
+      "height": 800,
+      "date": "2022-11-20"
+    }
+  ]
+}

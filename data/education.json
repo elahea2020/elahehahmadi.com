@@ -1,0 +1,25 @@
+{
+  "resources": [
+    {
+      "id": 1,
+      "roman": "I.",
+      "title": "Uncertainty in Deep Learning",
+      "description": "A practical guide to Bayesian methods, Monte Carlo dropout, and conformal prediction for building models that know what they don't know.",
+      "url": "#"
+    },
+    {
+      "id": 2,
+      "roman": "II.",
+      "title": "AI for Healthcare Professionals",
+      "description": "Non-technical primers on how AI works, how to evaluate AI products, and what questions to ask before deploying AI in clinical settings.",
+      "url": "#"
+    },
+    {
+      "id": 3,
+      "roman": "III.",
+      "title": "The Technical Founder's Toolkit",
+      "description": "Resources compiled for engineers stepping into entrepreneurship — from cap tables to customer discovery to building culture from day one.",
+      "url": "#"
+    }
+  ]
+}

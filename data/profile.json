@@ -1,0 +1,46 @@
+{
+  "name": "Elaheh Ahmadi",
+  "roles": ["Co-founder & Chief AI Officer, VIVA AI", "Co-founder, Themis AI", "MEng EECS, MIT"],
+  "bio": [
+    "I'm a serial entrepreneur, engineer, and photographer with a passion for building transformative technologies. As the co-founder and Chief AI Officer at VIVA AI, I'm leading the charge in revolutionizing dental and medical offices with our next-generation AI Receptionist & Office Manager.",
+    "I'm also the co-founder of Themis AI, where we're on a mission to empower the world to create, advance, and deploy trustworthy AI solutions. My specialty is in reliable and trustworthy AI applications, AI in healthcare, robotics, and entrepreneurship."
+  ],
+  "links": [
+    { "label": "VIVA AI", "url": "http://getviva.ai" },
+    { "label": "Themis AI", "url": "http://themisai.io" },
+    { "label": "Google Scholar", "url": "https://scholar.google.com/citations?user=LPf5Vq0AAAAJ" }
+  ],
+  "awards": [
+    { "title": "Forbes 30 Under 30", "year": "2023" },
+    { "title": "BostonInno 25 Under 25", "year": "2022" },
+    { "title": "Harold & Arlene Schnitzer Prize, MIT", "year": "2020" },
+    { "title": "Intel Ignite Cohort 2 Boston", "year": "Themis AI" },
+    { "title": "MIT 100k Acceleration Finalist", "year": "2018" },
+    { "title": "Gold Medal, National Physics Olympiad", "year": "Iran" }
+  ],
+  "publications": [
+    {
+      "venue": "AAAI 2024",
+      "title": "Uncertainty-aware Language Modeling for Selective Question Answering",
+      "url": "https://arxiv.org/abs/2311.15451"
+    },
+    {
+      "venue": "ICML 2023",
+      "title": "Risk-Aware Image Generation by Estimating and Propagating Uncertainty",
+      "url": "https://openreview.net/forum?id=zzboa1TtNI"
+    },
+    {
+      "venue": "NeurIPS 2022",
+      "title": "Capsa: A Unified Framework for Quantifying Risk in Deep Neural Networks",
+      "url": "#"
+    },
+    {
+      "venue": "Patent 2025",
+      "title": "Systems and methods for deep learning model optimization",
+      "url": "https://patents.google.com/patent/US20250111230A1/en"
+    }
+  ],
+  "contact": {
+    "formspree_id": "YOUR_FORMSPREE_ID"
+  }
+}

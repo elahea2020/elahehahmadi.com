@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elaheh Ahmadi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">Elaheh Ahmadi</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#art">Photography</a></li>
+    <li><a href="#articles">Writing</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-mobile-toggle" onclick="toggleMobileNav()">☰</button>
+</nav>
+
+<div class="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow" id="heroRoles"></p>
+    <h1 class="hero-name">Elaheh<br><em>Ahmadi</em></h1>
+    <p class="hero-desc">Building trustworthy AI at the intersection of technology and human impact — from dental offices to deep learning research.</p>
+    <a class="hero-cta" href="#about">Explore &rarr;</a>
+  </div>
+  <div class="hero-image">
+    <div class="hero-image-placeholder"><span>EA</span></div>
+  </div>
+</div>
+
+<section id="about">
+  <p class="section-label">About</p>
+  <div class="about-grid">
+    <div class="about-sidebar">
+      <p class="about-sidebar-name">Elaheh Ahmadi</p>
+      <p class="about-sidebar-role" id="aboutRoles"></p>
+      <div class="about-links" id="aboutLinks"></div>
+    </div>
+    <div class="about-content">
+      <div id="aboutBio"></div>
+      <div class="awards-grid" id="awardsGrid"></div>
+      <div class="pubs-list" id="pubsList"></div>
+    </div>
+  </div>
+</section>
+
+<section id="art">
+  <p class="section-label">Photography</p>
+  <h2 class="section-title">Visual Work</h2>
+  <div class="photo-filters" id="photoFilters">
+    <button class="filter-btn active" onclick="filterPhotos('all', this)">All</button>
+  </div>
+  <div class="photo-grid" id="photoGrid"></div>
+</section>
+
+<section id="articles">
+  <p class="section-label">Writing</p>
+  <h2 class="section-title">Article Series</h2>
+  <div class="series-list" id="seriesList"></div>
+</section>
+
+<section id="education">
+  <p class="section-label">Education</p>
+  <h2 class="section-title">Learning Resources</h2>
+  <div class="edu-grid" id="eduGrid"></div>
+</section>
+
+<section id="contact">
+  <p class="section-label">Contact</p>
+  <h2 class="section-title">Get in Touch</h2>
+  <div class="contact-grid">
+    <div>
+      <p class="contact-desc">Reach out for collaborations, speaking invitations, or to book a consultation on AI, healthcare technology, or entrepreneurship.</p>
+      <div class="contact-links" id="contactLinks"></div>
+    </div>
+    <form class="contact-form" id="contactForm">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="email" name="email" placeholder="Email address" required>
+      <textarea name="message" placeholder="Your message…" required></textarea>
+      <button type="submit" class="contact-submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>© <span id="footerYear"></span> Elaheh Ahmadi. All rights reserved.</p>
+  <div class="footer-links" id="footerLinks"></div>
+</footer>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">×</button>
+  <img id="lightboxImg" src="" alt="">
+  <p class="lightbox-caption" id="lightboxCaption"></p>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
