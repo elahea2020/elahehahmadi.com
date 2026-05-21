@@ -32,12 +32,29 @@
     {
       "venue": "NeurIPS 2022",
       "title": "Capsa: A Unified Framework for Quantifying Risk in Deep Neural Networks",
-      "url": "#"
+      "url": "https://arxiv.org/abs/2308.00231"
     },
     {
       "venue": "Patent 2025",
       "title": "Systems and methods for deep learning model optimization",
       "url": "https://patents.google.com/patent/US20250111230A1/en"
+    }
+  ],
+  "talks": [
+    {
+      "venue": "STEX25, MIT",
+      "title": "Themis AI — Breaking down bias in AI applications",
+      "url": "https://www.youtube.com/watch?v=jF2Yg4N2yEM"
+    },
+    {
+      "venue": "MIT Solve, 2023",
+      "title": "Themis AI at Solve at MIT 2023",
+      "url": "https://www.youtube.com/watch?v=qDQz6yC1nmA"
+    },
+    {
+      "venue": "She Leads Deep Tech",
+      "title": "Elaheh Ahmadi | She Leads Deep Tech",
+      "url": "https://www.youtube.com/watch?v=OVL26WpLuyg"
     }
   ],
   "contact": {

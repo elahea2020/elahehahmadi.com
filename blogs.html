@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Writing — Elaheh Ahmadi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="blogs">
+
+<nav>
+  <a class="nav-logo" href="index.html">Elaheh Ahmadi</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="blogs.html" class="active">Writing</a></li>
+    <li><a href="arts.html">Arts</a></li>
+  </ul>
+  <button class="nav-mobile-toggle" onclick="toggleMobileNav()">☰</button>
+</nav>
+
+<header class="page-header">
+  <p class="section-label">Writing</p>
+  <h1>Article <em>Series</em></h1>
+  <p>Essays on trustworthy AI, the journey from research to startup, and the unexpected places AI is reshaping how we work.</p>
+</header>
+
+<section id="articles">
+  <div class="series-list" id="seriesList"></div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="nav-logo" href="index.html">Elaheh Ahmadi</a>
+      <p>For collaborations, speaking invitations, or consultations on AI, healthcare technology, and entrepreneurship — get in touch.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="arts.html">Arts</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul id="footerContact"></ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© <span id="footerYear"></span> Elaheh Ahmadi. All rights reserved.</p>
+    <div class="footer-links" id="footerLinks"></div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -8,16 +8,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body data-page="home">
 
 <nav>
-  <a class="nav-logo" href="#">Elaheh Ahmadi</a>
+  <a class="nav-logo" href="index.html">Elaheh Ahmadi</a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#art">Photography</a></li>
-    <li><a href="#articles">Writing</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <!-- <li><a href="blogs.html">Writing</a></li> -->
+    <li><a href="arts.html">Arts</a></li>
   </ul>
   <button class="nav-mobile-toggle" onclick="toggleMobileNav()">☰</button>
 </nav>
@@ -27,10 +26,10 @@
     <p class="hero-eyebrow" id="heroRoles"></p>
     <h1 class="hero-name">Elaheh<br><em>Ahmadi</em></h1>
     <p class="hero-desc">Building trustworthy AI at the intersection of technology and human impact — from dental offices to deep learning research.</p>
-    <a class="hero-cta" href="#about">Explore &rarr;</a>
+    <a class="hero-cta" href="#about">Career highlights &rarr;</a>
   </div>
   <div class="hero-image">
-    <div class="hero-image-placeholder"><span>EA</span></div>
+    <img src="assets/images/elahe-solve.jpg" alt="Elaheh Ahmadi">
   </div>
 </div>
 
@@ -45,59 +44,53 @@
     <div class="about-content">
       <div id="aboutBio"></div>
       <div class="awards-grid" id="awardsGrid"></div>
+      <h3 class="subsection-label">Publications</h3>
       <div class="pubs-list" id="pubsList"></div>
+      <h3 class="subsection-label">Talks</h3>
+      <div class="pubs-list" id="talksList"></div>
     </div>
   </div>
 </section>
 
-<section id="art">
-  <p class="section-label">Photography</p>
-  <h2 class="section-title">Visual Work</h2>
-  <div class="photo-filters" id="photoFilters">
-    <button class="filter-btn active" onclick="filterPhotos('all', this)">All</button>
-  </div>
-  <div class="photo-grid" id="photoGrid"></div>
+<section id="ventures">
+  <p class="section-label">Ventures</p>
+  <h2 class="section-title">Companies I'm building</h2>
+  <div class="ventures-grid" id="venturesGrid"></div>
+  <a class="section-cta" href="projects.html">See all projects &rarr;</a>
 </section>
 
-<section id="articles">
-  <p class="section-label">Writing</p>
-  <h2 class="section-title">Article Series</h2>
-  <div class="series-list" id="seriesList"></div>
-</section>
-
+<!--
 <section id="education">
   <p class="section-label">Education</p>
   <h2 class="section-title">Learning Resources</h2>
   <div class="edu-grid" id="eduGrid"></div>
 </section>
-
-<section id="contact">
-  <p class="section-label">Contact</p>
-  <h2 class="section-title">Get in Touch</h2>
-  <div class="contact-grid">
-    <div>
-      <p class="contact-desc">Reach out for collaborations, speaking invitations, or to book a consultation on AI, healthcare technology, or entrepreneurship.</p>
-      <div class="contact-links" id="contactLinks"></div>
-    </div>
-    <form class="contact-form" id="contactForm">
-      <input type="text" name="name" placeholder="Your name" required>
-      <input type="email" name="email" placeholder="Email address" required>
-      <textarea name="message" placeholder="Your message…" required></textarea>
-      <button type="submit" class="contact-submit">Send Message</button>
-    </form>
-  </div>
-</section>
+-->
 
 <footer>
-  <p>© <span id="footerYear"></span> Elaheh Ahmadi. All rights reserved.</p>
-  <div class="footer-links" id="footerLinks"></div>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="nav-logo" href="index.html">Elaheh Ahmadi</a>
+      <p>For collaborations, speaking invitations, or consultations on AI, healthcare technology, and entrepreneurship — get in touch.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="blogs.html">Writing</a></li>
+        <li><a href="arts.html">Arts</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul id="footerContact"></ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© <span id="footerYear"></span> Elaheh Ahmadi. All rights reserved.</p>
+    <div class="footer-links" id="footerLinks"></div>
+  </div>
 </footer>
-
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <button class="lightbox-close" onclick="closeLightbox()">×</button>
-  <img id="lightboxImg" src="" alt="">
-  <p class="lightbox-caption" id="lightboxCaption"></p>
-</div>
 
 <script src="assets/js/main.js"></script>
 </body>

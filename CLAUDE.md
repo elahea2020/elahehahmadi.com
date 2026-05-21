@@ -1,19 +1,23 @@
 # Elaheh Ahmadi — Personal Website
 
-This is a static website hosted on GitHub Pages. All content is driven by JSON files in the `data/` folder. **Never edit `index.html` or `assets/` directly for content changes** — always edit the JSON files.
+A static, multi-page site hosted on GitHub Pages. Theme is black & white (dark). All content is driven by JSON files in `data/`. **Never edit HTML or CSS for content changes** — always edit the JSON files.
 
 ---
 
 ## Project Structure
 
 ```
-elahehahmadi/
-├── index.html              # Main site (do not edit for content)
+elahehahmadi.com/
+├── index.html              # Landing — career highlights (do not edit for content)
+├── arts.html               # Photography sub-page
+├── blogs.html              # Writing / article series sub-page
+├── projects.html           # Ventures + research sub-page
 ├── assets/
-│   ├── css/style.css       # All styles
-│   └── js/main.js          # Loads JSON and renders site
+│   ├── css/style.css       # Black & white theme
+│   └── js/main.js          # Multi-page renderer (looks at <body data-page="...">)
 ├── data/                   # ← EDIT THESE for all content changes
 │   ├── profile.json        # Bio, awards, publications, links
+│   ├── projects.json       # Ventures (VIVA, Themis) + research projects
 │   ├── photos.json         # Photography gallery
 │   ├── articles.json       # Article series
 │   └── education.json      # Educational resources
@@ -25,6 +29,19 @@ elahehahmadi/
 └── .github/workflows/      # Auto-deploy on git push
     └── deploy.yml
 ```
+
+### Page contents
+
+- **`index.html`** (landing): hero, about/bio, awards, publications, ventures preview (links to `projects.html`), education, footer.
+- **`arts.html`**: photography gallery with category filters.
+- **`blogs.html`**: article series.
+- **`projects.html`**: full ventures grid + research projects list.
+
+All pages share the same nav and footer markup. The footer contact column (`#footerContact`) is populated on every page from `profile.json` → `links`.
+
+### How the JS routes by page
+
+`assets/js/main.js` reads `document.body.dataset.page` ("home", "arts", "blogs", "projects") and only fetches the JSON files that page needs. Render functions short-circuit when their target element isn't on the page, so adding a new section is just: drop a `<div id="...">` into the page, and write/extend a renderer.
 
 ---
 
@@ -64,11 +81,44 @@ Add a new object to the `series` array in `data/articles.json`:
 }
 ```
 
-### Update bio or awards
-Edit `data/profile.json` — the `bio` array (paragraphs), `awards` array, or `publications` array.
+### Add a venture or research project
+Edit `data/projects.json`.
+
+Ventures (`ventures` array):
+```json
+{
+  "id": "venture-slug",
+  "name": "Venture Name",
+  "role": "Your role",
+  "tagline": "One-line description.",
+  "description": "Longer description.",
+  "url": "https://example.com",
+  "year": "2024 – Present"
+}
+```
+
+Research (`research` array):
+```json
+{
+  "id": "project-slug",
+  "title": "Project Title",
+  "summary": "What it is.",
+  "venue": "AAAI 2024",
+  "url": "https://link-to-paper.com",
+  "year": "2024"
+}
+```
+
+### Update bio, awards, publications, talks, or contact links
+Edit `data/profile.json` — the `bio`, `awards`, `publications`, `talks`, or `links` arrays. The `links` array drives both the About sidebar and the footer Contact column on every page.
+
+To add a talk:
+```json
+{ "venue": "Event Name, Year", "title": "Talk title", "url": "https://link-to-video.com" }
+```
 
 ### Add an education resource
-Add to `data/education.json` resources array:
+Add to `data/education.json` `resources` array:
 ```json
 {
   "id": 4,
@@ -82,7 +132,7 @@ Add to `data/education.json` resources array:
 ### Add a new photo category
 1. Create `photos/<newcategory>/` folder
 2. Add the category name to `data/photos.json` `categories` array
-3. A filter button will appear automatically
+3. A filter button will appear automatically on `arts.html`
 
 ---
 
@@ -94,15 +144,7 @@ git add .
 git commit -m "describe what you changed"
 git push
 ```
-GitHub Actions will auto-deploy in ~30 seconds. Live at: https://elahehahmadi.github.io (or custom domain once configured).
-
----
-
-## Contact Form Setup (one-time)
-
-1. Create a free account at https://formspree.io
-2. Create a new form → copy the form ID (looks like `xyzabcde`)
-3. In `data/profile.json`, set: `"formspree_id": "xyzabcde"`
+GitHub Actions will auto-deploy in ~30 seconds.
 
 ---
 
@@ -111,14 +153,16 @@ GitHub Actions will auto-deploy in ~30 seconds. Live at: https://elahehahmadi.gi
 - Recommended max size: 2MB per image (compress with ImageOptim or Squoosh)
 - Supported formats: JPG, PNG, WebP (WebP preferred for size)
 - Keep total `photos/` folder under 800MB to stay safe within GitHub's 1GB limit
-- For large photo libraries, upload to Cloudflare R2 and use the public URL in `photos.json` instead of a local path
+- Photos are displayed with a grayscale filter to match the site theme — colored originals still work fine
+- For large libraries, upload to Cloudflare R2 and use the public URL in `photos.json` instead of a local path
 
 ---
 
 ## Important Rules for Claude Code
 
-- Always edit JSON files for content, never the HTML
-- When adding photos, always compress first if over 2MB
+- Always edit JSON files for content; never the HTML/CSS
+- When adding photos, compress first if over 2MB
 - Commit messages should describe the content change clearly
 - Never delete existing data — comment out or archive instead
 - The `id` field in JSON arrays must be unique
+- The site is intentionally black & white — avoid introducing colored elements

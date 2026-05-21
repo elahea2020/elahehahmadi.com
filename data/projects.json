@@ -1,0 +1,56 @@
+{
+  "ventures": [
+    {
+      "id": "viva-ai",
+      "name": "VIVA AI",
+      "role": "Co-founder & Chief AI Officer",
+      "tagline": "Next-generation AI Receptionist & Office Manager for dental and medical offices.",
+      "description": "Leading AI strategy and product for a vertical AI platform automating front-desk operations, scheduling, and patient communications across hundreds of practices.",
+      "url": "http://getviva.ai",
+      "year": "2024 – Present"
+    },
+    {
+      "id": "themis-ai",
+      "name": "Themis AI",
+      "role": "Co-founder",
+      "tagline": "Empowering the world to create, advance, and deploy trustworthy AI.",
+      "description": "MIT spin-out building uncertainty-aware tooling for production deep learning systems — used by enterprises to quantify and mitigate risk in their models.",
+      "url": "http://themisai.io",
+      "year": "2021 – Present"
+    }
+  ],
+  "research": [
+    {
+      "id": "uq-language-models",
+      "title": "Uncertainty-aware Language Modeling for Selective QA",
+      "summary": "Calibrated uncertainty estimates that let large language models abstain on questions they shouldn't answer.",
+      "venue": "AAAI 2024",
+      "url": "https://arxiv.org/abs/2311.15451",
+      "year": "2024"
+    },
+    {
+      "id": "risk-aware-imagegen",
+      "title": "Risk-Aware Image Generation by Estimating and Propagating Uncertainty",
+      "summary": "A generative pipeline that propagates uncertainty through diffusion models to flag low-confidence outputs.",
+      "venue": "ICML 2023",
+      "url": "https://openreview.net/forum?id=zzboa1TtNI",
+      "year": "2023"
+    },
+    {
+      "id": "capsa",
+      "title": "Capsa: A Unified Framework for Quantifying Risk in Deep Neural Networks",
+      "summary": "Open-source framework wrapping arbitrary PyTorch/TF models with bias, label-noise, and epistemic uncertainty estimators.",
+      "venue": "NeurIPS 2022",
+      "url": "#",
+      "year": "2022"
+    },
+    {
+      "id": "dnn-optimization-patent",
+      "title": "Systems and Methods for Deep Learning Model Optimization",
+      "summary": "Patented techniques for compressing and accelerating deep learning models without sacrificing reliability.",
+      "venue": "US Patent 2025",
+      "url": "https://patents.google.com/patent/US20250111230A1/en",
+      "year": "2025"
+    }
+  ]
+}
