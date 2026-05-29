@@ -1,6 +1,23 @@
 {
   "series": [
     {
+      "id": 4,
+      "number": "01",
+      "tag": "Agentic AI",
+      "title": "Agentic AI",
+      "description": "A hands-on series on building AI agents — from first principles and a beginner tutorial, through design reflections, to multi-agent orchestration and integrating agents into existing software.",
+      "articles": [
+        { "title": "AI Agents 101: What They Are and Why They Matter", "url": "https://medium.com/@elaheh_32548/ai-agents-101-what-they-are-and-why-they-matter-f300f8467609", "date": "2026-05-23" },
+        { "title": "Building Your First AI Agent: A Gym Trainer Tutorial", "url": "https://medium.com/@elaheh_32548/building-your-first-ai-agent-a-gym-trainer-tutorial-99f683027492", "date": "2026-05-23" },
+        { "title": "Building Agentic Software: Reflections and Design Principles", "url": "https://medium.com/@elaheh_32548/building-agentic-software-reflections-and-design-principles-4c081e071a7c", "date": "2026-05-24" },
+        { "title": "Multi-Agent Systems: Understanding Orchestration Patterns", "url": "https://medium.com/@elaheh_32548/multi-agent-systems-understanding-orchestration-patterns-1e10f34cffaf", "date": "2026-05-25" },
+        { "title": "Building a Complete Health Tracker: Multi-Agent System in Action", "url": "https://medium.com/@elaheh_32548/building-a-complete-health-tracker-multi-agent-system-in-action-5539620f0060", "date": "2026-05-26" },
+        { "title": "Integrating AI Agents into Existing Software: Three Approaches", "url": "https://medium.com/@elaheh_32548/integrating-ai-agents-into-existing-software-three-approaches-2d057ca1392c", "date": "2026-05-28" }
+      ]
+    }
+  ],
+  "series_archived": [
+    {
       "id": 1,
       "number": "01",
       "tag": "AI & Trust",
