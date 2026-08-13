@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trapped — Elaheh Ahmadi</title>
+<meta name="description" content="Trapped — a photographic study of what it means to be a woman in a modern society. A project by Elaheh Ahmadi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css?v=2">
+</head>
+<body data-page="trapped" class="gallery-mode">
+
+<div class="tg-hud">
+  <a class="tg-home" href="arts.html">← Arts</a>
+  <span class="tg-title">Trapped</span>
+  <span class="tg-prog" id="tgProg"></span>
+</div>
+
+<!-- Artist statement (entry) -->
+<section class="tg-statement" id="tgStatement">
+  <div class="tg-statement-inner">
+    <p class="tg-kicker" id="tgKicker"></p>
+    <h1>Trapped</h1>
+    <p class="tg-tagline" id="tgTagline"></p>
+    <div class="tg-memo" id="tgMemo"></div>
+    <button class="tg-enter" id="tgEnter">Enter the gallery <span class="arw">→</span></button>
+  </div>
+</section>
+
+<!-- Walls -->
+<div class="tg-stage" id="tgStage" hidden></div>
+<button class="tg-arrow prev" id="tgPrev" hidden aria-label="Previous wall">‹</button>
+<button class="tg-arrow next" id="tgNext" hidden aria-label="Next wall">›</button>
+<div class="tg-index" id="tgIndex" hidden></div>
+
+<!-- Lightbox -->
+<div class="tg-lightbox" id="tgLightbox">
+  <button class="tg-lb-close" id="tgLbClose" aria-label="Close">×</button>
+  <img id="tgLbImg" src="" alt="">
+  <div class="tg-lb-cap">
+    <div class="t" id="tgLbTitle"></div>
+    <div class="d" id="tgLbSubject"></div>
+  </div>
+</div>
+
+<script src="assets/js/main.js?v=2"></script>
+</body>
+</html>

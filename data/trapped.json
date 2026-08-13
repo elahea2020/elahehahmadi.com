@@ -1,0 +1,748 @@
+{
+  "title": "Trapped",
+  "tagline": "A photographic study of what it means to be a woman in a modern society.",
+  "memo": [
+    "I was born in a society where women had to fight for every single right that they wanted to have. I grew up in a Muslim country and learned to be a Muslim woman and practice the religion by force rather than choice. I always struggled and questioned why I shouldn't be given the same rights and freedom as the opposite sex. Every day I questioned if I am smart enough for math and engineering. All the time I had to convince everyone around me that I am capable of doing anything and I am not limited just because I am a woman. I fought my way to get admitted to the best engineering school in the world, MIT, however I still heard people mumble I only got in because I am a girl.",
+    "After three years at MIT, in my junior year I found myself in a place where I was sad, lonely, hopeless, had strong doubt about my abilities, and I felt Trapped by everything that was out of my control; every limitation that I faced because of everything that I had no power over — my gender, my race, my country. It was then when I started to share my feelings via photography. The more I captured, and shared my work, the more I realized the power of photography. I started capturing my feeling of being “Trapped” by asking some of my close friends to model for me. After the first few photoshoots I started asking around for more models. I talked to each of them to learn about their background and the struggles they faced in their life because of their gender; then I would design a scene to capture their story. It was then that I discovered how all women have to fight for rights that should already be there. This project started as a self projection, however the more the project progressed the more I saw its impact, not only on the models but also on the people observing the outcomes. Each photo portrays a story, a struggle, a woman. This project, in its current form, is aimed to raise awareness about the struggles of being a woman in a modern society; it is aimed at an audience all around the world who speak any language, as the message is conveyed through the lens of a camera."
+  ],
+  "subjects": [
+    {
+      "id": "alexa",
+      "name": "Alexa",
+      "photos": [
+        {
+          "url": "photos/Trapped/Alexa/Alexa1.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1467
+        },
+        {
+          "url": "photos/Trapped/Alexa/Alexa2.jpg",
+          "caption": "",
+          "width": 1638,
+          "height": 2200
+        },
+        {
+          "url": "photos/Trapped/Alexa/Alexa3.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1476
+        },
+        {
+          "url": "photos/Trapped/Alexa/Alexa4.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1467
+        },
+        {
+          "url": "photos/Trapped/Alexa/Alexa5.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1552
+        },
+        {
+          "url": "photos/Trapped/Alexa/scan43.jpg",
+          "caption": "",
+          "width": 1800,
+          "height": 1431
+        },
+        {
+          "url": "photos/Trapped/Alexa/scan50.jpg",
+          "caption": "",
+          "width": 1295,
+          "height": 1937
+        }
+      ]
+    },
+    {
+      "id": "amy",
+      "name": "Amy",
+      "photos": [
+        {
+          "url": "photos/Trapped/Amy/Can%27tSeeTheFreedom_bw.jpg",
+          "caption": "Can't See The Freedom",
+          "width": 2200,
+          "height": 1467
+        },
+        {
+          "url": "photos/Trapped/Amy/Emerging.jpg",
+          "caption": "Emerging",
+          "width": 2200,
+          "height": 1467
+        },
+        {
+          "url": "photos/Trapped/Amy/ItsPartOfMe.jpg",
+          "caption": "Its Part Of Me",
+          "width": 1467,
+          "height": 2200
+        },
+        {
+          "url": "photos/Trapped/Amy/TheyTrappedMe.jpg",
+          "caption": "They Trapped Me",
+          "width": 2000,
+          "height": 1333
+        }
+      ]
+    },
+    {
+      "id": "claudia",
+      "name": "Claudia",
+      "photos": [
+        {
+          "url": "photos/Trapped/Claudia/Claudia1.jpg",
+          "caption": "",
+          "width": 1333,
+          "height": 2000
+        },
+        {
+          "url": "photos/Trapped/Claudia/Claudia2.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1467
+        }
+      ]
+    },
+    {
+      "id": "cynthia",
+      "name": "Cynthia",
+      "photos": [
+        {
+          "url": "photos/Trapped/cynthia/cynthia_LetMyVisionBe.jpg",
+          "caption": "Cynthia Let My Vision Be",
+          "width": 2200,
+          "height": 1467
+        }
+      ]
+    },
+    {
+      "id": "doudou",
+      "name": "DouDou",
+      "photos": [
+        {
+          "url": "photos/Trapped/DouDou/DouDou.jpg",
+          "caption": "",
+          "width": 2000,
+          "height": 1333
+        },
+        {
+          "url": "photos/Trapped/DouDou/InContrast%28BW%29.jpg",
+          "caption": "In Contrast",
+          "width": 2000,
+          "height": 1333
+        },
+        {
+          "url": "photos/Trapped/DouDou/MyCultureMyFuture.jpg",
+          "caption": "My Culture My Future",
+          "width": 2200,
+          "height": 1467
+        }
+      ]
+    },
+    {
+      "id": "ela",
+      "name": "Ela",
+      "photos": [
+        {
+          "url": "photos/Trapped/Ela/AllIwant.jpg",
+          "caption": "All Iwant",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "url": "photos/Trapped/Ela/Cant.jpg",
+          "caption": "Cant",
+          "width": 1800,
+          "height": 1200
+        },
+        {
+          "url": "photos/Trapped/Ela/cantHoldItAnymore.jpg",
+          "caption": "Cant Hold It Anymore",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "url": "photos/Trapped/Ela/ImGone.jpg",
+          "caption": "Im Gone",
+          "width": 1333,
+          "height": 2000
+        },
+        {
+          "url": "photos/Trapped/Ela/lost2BW.jpg",
+          "caption": "Lost 2",
+          "width": 2000,
+          "height": 1210
+        },
+        {
+          "url": "photos/Trapped/Ela/Natureal.jpg",
+          "caption": "Natureal",
+          "width": 2200,
+          "height": 1467
+        }
+      ]
+    },
+    {
+      "id": "ellie",
+      "name": "Ellie",
+      "photos": [
+        {
+          "url": "photos/Trapped/Ellie/1.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1467
+        },
+        {
+          "url": "photos/Trapped/Ellie/2.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1467
+        },
+        {
+          "url": "photos/Trapped/Ellie/3.jpg",
+          "caption": "",
+          "width": 2000,
+          "height": 1333
+        },
+        {
+          "url": "photos/Trapped/Ellie/4.jpg",
+          "caption": "",
+          "width": 2000,
+          "height": 1333
+        },
+        {
+          "url": "photos/Trapped/Ellie/5.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1467
+        },
+        {
+          "url": "photos/Trapped/Ellie/6.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1467
+        }
+      ]
+    },
+    {
+      "id": "fatima",
+      "name": "Fatima",
+      "photos": [
+        {
+          "url": "photos/Trapped/Fatima/Fatimah.jpg",
+          "caption": "Fatimah",
+          "width": 2200,
+          "height": 1467
+        }
+      ]
+    },
+    {
+      "id": "haniya",
+      "name": "Haniya",
+      "photos": [
+        {
+          "url": "photos/Trapped/Haniya/Don%27tBeYou.jpg",
+          "caption": "Don't Be You",
+          "width": 2200,
+          "height": 1467
+        },
+        {
+          "url": "photos/Trapped/Haniya/IDontBelong.jpg",
+          "caption": "IDont Belong",
+          "width": 2000,
+          "height": 1333
+        },
+        {
+          "url": "photos/Trapped/Haniya/ImExcluded.jpg",
+          "caption": "Im Excluded",
+          "width": 2000,
+          "height": 1333
+        },
+        {
+          "url": "photos/Trapped/Haniya/LetMeFree.jpg",
+          "caption": "Let Me Free",
+          "width": 2200,
+          "height": 1467
+        }
+      ]
+    },
+    {
+      "id": "jackie",
+      "name": "Jackie",
+      "photos": [
+        {
+          "url": "photos/Trapped/Jackie/2_signed.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1467
+        },
+        {
+          "url": "photos/Trapped/Jackie/determined.jpg",
+          "caption": "Determined",
+          "width": 2200,
+          "height": 1467
+        },
+        {
+          "url": "photos/Trapped/Jackie/I_cant_stop_seeing.jpg",
+          "caption": "I Cant Stop Seeing",
+          "width": 1466,
+          "height": 2200
+        },
+        {
+          "url": "photos/Trapped/Jackie/Imstill.jpg",
+          "caption": "Imstill",
+          "width": 2200,
+          "height": 1467
+        }
+      ]
+    },
+    {
+      "id": "jeba",
+      "name": "Jeba",
+      "photos": [
+        {
+          "url": "photos/Trapped/Jeba/Jeba1.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1832
+        },
+        {
+          "url": "photos/Trapped/Jeba/jeba2.jpg",
+          "caption": "",
+          "width": 2000,
+          "height": 1399
+        },
+        {
+          "url": "photos/Trapped/Jeba/Jeba4.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1467
+        },
+        {
+          "url": "photos/Trapped/Jeba/Jeba5.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1460
+        }
+      ]
+    },
+    {
+      "id": "katie",
+      "name": "Katie",
+      "photos": [
+        {
+          "url": "photos/Trapped/Katie/Katie_1_bw.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1466
+        },
+        {
+          "url": "photos/Trapped/Katie/Katie_2_bw.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1467
+        },
+        {
+          "url": "photos/Trapped/Katie/Katie_3_bw.jpg",
+          "caption": "",
+          "width": 1542,
+          "height": 2200
+        },
+        {
+          "url": "photos/Trapped/Katie/Katty_my_voice.jpg",
+          "caption": "Katty My Voice",
+          "width": 2200,
+          "height": 1467
+        }
+      ]
+    },
+    {
+      "id": "maddy",
+      "name": "Maddy",
+      "photos": [
+        {
+          "url": "photos/Trapped/Maddy/Maddie_2.jpg",
+          "caption": "Maddie 2",
+          "width": 2200,
+          "height": 1467
+        },
+        {
+          "url": "photos/Trapped/Maddy/Maddie_lowres.jpg",
+          "caption": "Maddie",
+          "width": 2200,
+          "height": 1467
+        },
+        {
+          "url": "photos/Trapped/Maddy/scan19.jpg",
+          "caption": "",
+          "width": 2020,
+          "height": 1593
+        },
+        {
+          "url": "photos/Trapped/Maddy/scan20.jpg",
+          "caption": "",
+          "width": 2019,
+          "height": 1595
+        },
+        {
+          "url": "photos/Trapped/Maddy/scan21.jpg",
+          "caption": "",
+          "width": 2023,
+          "height": 1592
+        },
+        {
+          "url": "photos/Trapped/Maddy/scan22.jpg",
+          "caption": "",
+          "width": 2021,
+          "height": 1592
+        },
+        {
+          "url": "photos/Trapped/Maddy/scan23.jpg",
+          "caption": "",
+          "width": 1593,
+          "height": 2021
+        },
+        {
+          "url": "photos/Trapped/Maddy/scan25.jpg",
+          "caption": "",
+          "width": 1846,
+          "height": 1340
+        },
+        {
+          "url": "photos/Trapped/Maddy/scan35.jpg",
+          "caption": "",
+          "width": 2019,
+          "height": 1594
+        }
+      ]
+    },
+    {
+      "id": "mariia",
+      "name": "Mariia",
+      "photos": [
+        {
+          "url": "photos/Trapped/Mariia/mariia_2.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1466
+        },
+        {
+          "url": "photos/Trapped/Mariia/mariia_3.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1467
+        },
+        {
+          "url": "photos/Trapped/Mariia/marria_4.jpg",
+          "caption": "Marria 4",
+          "width": 2200,
+          "height": 1467
+        }
+      ]
+    },
+    {
+      "id": "moj",
+      "name": "Moj",
+      "photos": [
+        {
+          "url": "photos/Trapped/Moj/12.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1467
+        }
+      ]
+    },
+    {
+      "id": "raveen",
+      "name": "Raveen",
+      "photos": [
+        {
+          "url": "photos/Trapped/Raveen/Raveen1.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1467
+        },
+        {
+          "url": "photos/Trapped/Raveen/Raveen2.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1467
+        },
+        {
+          "url": "photos/Trapped/Raveen/RaveenClaudia.jpg",
+          "caption": "",
+          "width": 1600,
+          "height": 1226
+        }
+      ]
+    },
+    {
+      "id": "saba",
+      "name": "Saba",
+      "photos": [
+        {
+          "url": "photos/Trapped/saba/saba.jpg",
+          "caption": "",
+          "width": 1467,
+          "height": 2200
+        },
+        {
+          "url": "photos/Trapped/saba/saba_1.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1467
+        },
+        {
+          "url": "photos/Trapped/saba/saba_2.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1467
+        },
+        {
+          "url": "photos/Trapped/saba/saba_3.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1467
+        },
+        {
+          "url": "photos/Trapped/saba/saba_4.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1467
+        },
+        {
+          "url": "photos/Trapped/saba/saba_5.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1467
+        }
+      ]
+    },
+    {
+      "id": "sabine",
+      "name": "Sabine",
+      "photos": [
+        {
+          "url": "photos/Trapped/Sabine/1bw.jpg",
+          "caption": "",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "url": "photos/Trapped/Sabine/2bw.jpg",
+          "caption": "",
+          "width": 2000,
+          "height": 1333
+        },
+        {
+          "url": "photos/Trapped/Sabine/3bw.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1467
+        }
+      ]
+    },
+    {
+      "id": "shadi",
+      "name": "Shadi",
+      "photos": [
+        {
+          "url": "photos/Trapped/Shadi/shadi1bw.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1467
+        },
+        {
+          "url": "photos/Trapped/Shadi/shadi2bw.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1517
+        },
+        {
+          "url": "photos/Trapped/Shadi/shadi3bw.jpg",
+          "caption": "",
+          "width": 1352,
+          "height": 2200
+        },
+        {
+          "url": "photos/Trapped/Shadi/shadi4bw.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1467
+        }
+      ]
+    },
+    {
+      "id": "siranush",
+      "name": "Siranush",
+      "photos": [
+        {
+          "url": "photos/Trapped/Siranush/natural_beauty.jpg",
+          "caption": "Natural Beauty",
+          "width": 1613,
+          "height": 2200
+        },
+        {
+          "url": "photos/Trapped/Siranush/scan45.jpg",
+          "caption": "",
+          "width": 1593,
+          "height": 2007
+        },
+        {
+          "url": "photos/Trapped/Siranush/scan47.jpg",
+          "caption": "",
+          "width": 1599,
+          "height": 2019
+        },
+        {
+          "url": "photos/Trapped/Siranush/Siranush2.jpg",
+          "caption": "",
+          "width": 933,
+          "height": 1400
+        },
+        {
+          "url": "photos/Trapped/Siranush/Siranush3.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1563
+        },
+        {
+          "url": "photos/Trapped/Siranush/Siranush4.jpg",
+          "caption": "",
+          "width": 1600,
+          "height": 1163
+        },
+        {
+          "url": "photos/Trapped/Siranush/siranush_.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1467
+        }
+      ]
+    },
+    {
+      "id": "tam",
+      "name": "Tam",
+      "photos": [
+        {
+          "url": "photos/Trapped/Tam/tam.jpg",
+          "caption": "",
+          "width": 1467,
+          "height": 2200
+        },
+        {
+          "url": "photos/Trapped/Tam/Tam_2.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1467
+        },
+        {
+          "url": "photos/Trapped/Tam/tam_3.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1467
+        }
+      ]
+    },
+    {
+      "id": "tchelet",
+      "name": "Tchelet",
+      "photos": [
+        {
+          "url": "photos/Trapped/Tchelet/Tchelet1.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1467
+        },
+        {
+          "url": "photos/Trapped/Tchelet/Techelet2.jpg",
+          "caption": "Techelet 2",
+          "width": 1333,
+          "height": 2000
+        }
+      ]
+    },
+    {
+      "id": "group",
+      "name": "Group",
+      "photos": [
+        {
+          "url": "photos/Trapped/Group/1.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1469
+        },
+        {
+          "url": "photos/Trapped/Group/2.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1396
+        },
+        {
+          "url": "photos/Trapped/Group/3.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1369
+        },
+        {
+          "url": "photos/Trapped/Group/4.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1353
+        },
+        {
+          "url": "photos/Trapped/Group/5.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1308
+        },
+        {
+          "url": "photos/Trapped/Group/6.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1328
+        },
+        {
+          "url": "photos/Trapped/Group/7.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1192
+        },
+        {
+          "url": "photos/Trapped/Group/8.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1248
+        },
+        {
+          "url": "photos/Trapped/Group/9.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1254
+        },
+        {
+          "url": "photos/Trapped/Group/10.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1276
+        },
+        {
+          "url": "photos/Trapped/Group/11.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1477
+        },
+        {
+          "url": "photos/Trapped/Group/12.jpg",
+          "caption": "",
+          "width": 2200,
+          "height": 1401
+        },
+        {
+          "url": "photos/Trapped/Group/power.jpg",
+          "caption": "Power",
+          "width": 2200,
+          "height": 1466
+        }
+      ]
+    }
+  ]
+}

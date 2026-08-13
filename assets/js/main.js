@@ -11,12 +11,16 @@ async function loadJSON(path) {
 async function init() {
   const page = document.body.dataset.page || 'home';
 
-  // Always-loaded: profile (powers nav meta + footer on every page)
-  const profile = await loadJSON('data/profile.json');
-  renderHero(profile);
-  renderAbout(profile);
-  renderFooter(profile);
-  document.getElementById('footerYear').textContent = new Date().getFullYear();
+  // The gallery page is chrome-free — it needs no profile, nav, or footer.
+  let profile = null;
+  if (page !== 'trapped') {
+    profile = await loadJSON('data/profile.json');
+    renderHero(profile);
+    renderAbout(profile);
+    renderFooter(profile);
+    const yearEl = document.getElementById('footerYear');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  }
 
   // Page-specific data
   if (page === 'home') {
@@ -35,8 +39,16 @@ async function init() {
     renderResearch(projects.research);
   }
   if (page === 'arts') {
-    const photos = await loadJSON('data/photos.json');
+    const [photos, artProjects] = await Promise.all([
+      loadJSON('data/photos.json'),
+      loadJSON('data/art-projects.json'),
+    ]);
+    renderArtProjects(artProjects);
     renderPhotos(photos);
+  }
+  if (page === 'trapped') {
+    const trapped = await loadJSON('data/trapped.json');
+    renderTrapped(trapped);
   }
   if (page === 'blogs') {
     const articles = await loadJSON('data/articles.json');
@@ -190,13 +202,41 @@ function openGroup(catName) {
   document.getElementById('groupSub').textContent = `${set.length} photograph${set.length === 1 ? '' : 's'}`;
   document.getElementById('pileWall').hidden = true;
   document.getElementById('groupDetail').hidden = false;
+  toggleArtsChrome(false);
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function closeGroup() {
   document.getElementById('groupDetail').hidden = true;
   document.getElementById('pileWall').hidden = false;
+  toggleArtsChrome(true);
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Hide the Projects band + Collections heading while a single category is open.
+function toggleArtsChrome(show) {
+  ['artProjects', 'collectionsHead'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.hidden = !show;
+  });
+}
+
+// ─── ART PROJECTS (featured on arts.html) ────────────────────────────────────
+
+function renderArtProjects(data) {
+  const el = document.getElementById('projectCards');
+  if (!el || !data || !data.projects) return;
+  el.innerHTML = data.projects.map(p => `
+    <a class="art-project" href="${p.url}">
+      <div class="cover"><img src="${p.cover}" alt="${p.title}" loading="lazy"></div>
+      <div class="body">
+        <div class="eyebrow"><span>${p.meta}</span>${p.year ? `<span class="year">${p.year}</span>` : ''}</div>
+        <h3>${p.title}</h3>
+        <p class="tagline">${p.tagline}</p>
+        <p class="excerpt">${p.excerpt}</p>
+        <span class="enter">Enter the gallery <span class="arw">→</span></span>
+      </div>
+    </a>`).join('');
 }
 
 function openLightbox(index) {
@@ -338,6 +378,145 @@ function cap(str) {
 
 function toggleMobileNav() {
   document.querySelector('.nav-links').classList.toggle('open');
+}
+
+// ─── TRAPPED — VIRTUAL GALLERY ───────────────────────────────────────────────
+// The project is hung as a series of walls holding at most MAX_PER_WALL works.
+// Subjects with more continue onto a second or third wall (I, II, III).
+
+const TG_MAX_PER_WALL = 5;
+const TG_ROMAN = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'];
+let tgWalls = [];
+let tgCur = 0;
+
+function renderTrapped(data) {
+  const stage = document.getElementById('tgStage');
+  if (!stage || !data) return;
+
+  document.getElementById('tgKicker').textContent =
+    `A photographic project · ${data.subjects.length} subjects · ${data.subjects.reduce((n, s) => n + s.photos.length, 0)} works`;
+  document.getElementById('tgTagline').textContent = data.tagline || '';
+  document.getElementById('tgMemo').innerHTML = (data.memo || []).map(p => `<p>${p}</p>`).join('');
+
+  tgWalls = tgBuildWalls(data.subjects);
+  tgRenderWalls();
+
+  document.getElementById('tgEnter').onclick = () => {
+    document.getElementById('tgStatement').classList.add('hidden');
+    ['tgStage', 'tgPrev', 'tgNext', 'tgIndex'].forEach(id => { document.getElementById(id).hidden = false; });
+    tgShow(0);
+  };
+  document.getElementById('tgPrev').onclick = () => tgShow(tgCur - 1);
+  document.getElementById('tgNext').onclick = () => tgShow(tgCur + 1);
+  document.getElementById('tgLbClose').onclick = tgCloseLightbox;
+  document.getElementById('tgLightbox').onclick = e => { if (e.target.id === 'tgLightbox') tgCloseLightbox(); };
+
+  document.addEventListener('keydown', e => {
+    const lb = document.getElementById('tgLightbox');
+    if (e.key === 'Escape') { if (lb.classList.contains('open')) tgCloseLightbox(); return; }
+    if (document.getElementById('tgStage').hidden || lb.classList.contains('open')) return;
+    if (e.key === 'ArrowRight') tgShow(tgCur + 1);
+    if (e.key === 'ArrowLeft') tgShow(tgCur - 1);
+  });
+
+  let rt;
+  window.addEventListener('resize', () => {
+    clearTimeout(rt);
+    rt = setTimeout(() => { tgRenderWalls(); tgShow(tgCur); }, 180);
+  });
+}
+
+// Split each subject into walls of at most MAX_PER_WALL, balanced so a wall
+// is never left with a single straggler.
+function tgBuildWalls(subjects) {
+  const walls = [];
+  subjects.forEach(s => {
+    const n = s.photos.length;
+    const count = Math.ceil(n / TG_MAX_PER_WALL);
+    const base = Math.floor(n / count);
+    const extra = n % count;
+    let i = 0;
+    for (let w = 0; w < count; w++) {
+      const take = base + (w < extra ? 1 : 0);
+      walls.push({ subject: s.name, photos: s.photos.slice(i, i + take), part: w + 1, parts: count });
+      i += take;
+    }
+  });
+  return walls;
+}
+
+// Row shape by count — keeps works large and evenly hung.
+function tgRowsFor(photos) {
+  const n = photos.length;
+  const shape = n <= 2 ? [n] : n === 3 ? [2, 1] : n === 4 ? [2, 2] : [3, 2];
+  const rows = [];
+  let i = 0;
+  shape.forEach(k => { rows.push(photos.slice(i, i + k).map((p, j) => ({ p, pi: i + j }))); i += k; });
+  return rows;
+}
+
+// Size each row so the whole wall fits one screen. Aspect ratios are preserved.
+function tgSizeRows(rows) {
+  const labelH = 30;                       // wall labels sit in flow
+  const availH = window.innerHeight * 0.60 - labelH * rows.length;
+  const availW = window.innerWidth * 0.88;
+  const gapV = Math.min(window.innerHeight * 0.044, 44);
+  const capH = (availH - gapV * (rows.length - 1)) / rows.length;
+  rows.forEach(row => {
+    const gapH = Math.min(window.innerWidth * 0.03, 34);
+    const matPad = 2 * Math.min(window.innerHeight * 0.02, 18) + 4;
+    const arSum = row.reduce((s, it) => s + ((it.p.width / it.p.height) || 1.4), 0);
+    const usableW = availW - gapH * (row.length - 1) - matPad * row.length;
+    const h = Math.min(usableW / arSum, capH);
+    row.forEach(it => { it.h = h; });
+  });
+  return rows;
+}
+
+function tgRenderWalls() {
+  const stage = document.getElementById('tgStage');
+  stage.innerHTML = tgWalls.map((w, wi) => {
+    const rows = tgSizeRows(tgRowsFor(w.photos));
+    const rowsHtml = rows.map(row => `<div class="tg-row">` + row.map(it => {
+      const p = it.p;
+      return `<figure class="tg-frame" style="--h:${it.h.toFixed(1)}px" onclick="tgOpenLightbox(${wi},${it.pi})">
+          <div class="mat"><div class="inner"><img src="${p.url}" alt="${p.caption || w.subject}" loading="lazy"></div></div>
+          ${p.caption ? `<figcaption><div class="t">${p.caption}</div></figcaption>` : ''}
+        </figure>`;
+    }).join('') + `</div>`).join('');
+    const meta = w.parts > 1 ? `${TG_ROMAN[w.part]} of ${TG_ROMAN[w.parts]}` : '';
+    return `<div class="tg-room" data-i="${wi}">
+        <div class="tg-hang">${rowsHtml}</div>
+        <div class="tg-nameplate"><div class="n">${w.subject}</div>${meta ? `<div class="meta">${meta}</div>` : ''}</div>
+      </div>`;
+  }).join('');
+
+  const idx = document.getElementById('tgIndex');
+  idx.innerHTML = tgWalls.map((w, i) =>
+    `<button onclick="tgShow(${i})">${w.subject}${w.parts > 1 ? `<span class="rn">${TG_ROMAN[w.part]}</span>` : ''}</button>`).join('');
+}
+
+function tgShow(i) {
+  tgCur = (i + tgWalls.length) % tgWalls.length;
+  document.querySelectorAll('.tg-room').forEach(r => r.classList.toggle('active', +r.dataset.i === tgCur));
+  document.getElementById('tgProg').textContent = `Wall ${tgCur + 1} / ${tgWalls.length}`;
+  document.querySelectorAll('.tg-index button').forEach((b, bi) => b.classList.toggle('active', bi === tgCur));
+  const active = document.querySelector('.tg-index button.active');
+  if (active) active.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+}
+
+function tgOpenLightbox(wi, pi) {
+  const w = tgWalls[wi];
+  const p = w.photos[pi];
+  if (!p) return;
+  document.getElementById('tgLbImg').src = p.url;
+  document.getElementById('tgLbTitle').textContent = p.caption || '';
+  document.getElementById('tgLbSubject').textContent = w.subject;
+  document.getElementById('tgLightbox').classList.add('open');
+}
+
+function tgCloseLightbox() {
+  document.getElementById('tgLightbox').classList.remove('open');
 }
 
 init();

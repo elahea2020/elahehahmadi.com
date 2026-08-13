@@ -1,0 +1,13 @@
+{
+  "projects": [
+    {
+      "id": "trapped",
+      "title": "Trapped",
+      "tagline": "A photographic study of what it means to be a woman in a modern society.",
+      "excerpt": "It began as a self-projection. I asked friends to model, learned the struggles they faced because of their gender, then designed a scene to capture each story. Each photo portrays a story, a struggle, a woman.",
+      "meta": "23 subjects · 100 works",
+      "cover": "photos/Trapped/Ela/Natureal.jpg",
+      "url": "trapped.html"
+    }
+  ]
+}

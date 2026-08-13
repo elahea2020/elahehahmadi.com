@@ -167,7 +167,7 @@ GitHub Actions will auto-deploy in ~30 seconds.
 - Recommended max size: 2MB per image (compress with ImageOptim or Squoosh)
 - Supported formats: JPG, PNG, WebP (WebP preferred for size)
 - Keep total `photos/` folder under 800MB to stay safe within GitHub's 1GB limit
-- Photos are displayed with a grayscale filter to match the site theme — colored originals still work fine
+- Photos display in their original colors. Only the **Trapped** gallery (`trapped.html`) applies a grayscale filter, since that project is presented in black and white
 - For large libraries, upload to Cloudflare R2 and use the public URL in `photos.json` instead of a local path
 
 ---

@@ -6,7 +6,7 @@
 <title>Arts — Elaheh Ahmadi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?v=2">
 </head>
 <body data-page="arts">
 
@@ -24,10 +24,22 @@
 <header class="page-header">
   <p class="section-label">Photography</p>
   <h1>Visual <em>Work</em></h1>
-  <p>A black-and-white study of portraits, landscapes, and the spaces in between — moments collected across cities, time zones, and quiet afternoons.</p>
+  <p>A study of portraits, landscapes, and the spaces in between — moments collected across cities, time zones, and quiet afternoons.</p>
 </header>
 
+<section id="artProjects">
+  <div class="art-section-head">
+    <p class="section-label">Projects</p>
+    <p class="art-section-note">Bodies of work with a statement behind them.</p>
+  </div>
+  <div class="project-cards" id="projectCards"></div>
+</section>
+
 <section id="art">
+  <div class="art-section-head" id="collectionsHead">
+    <p class="section-label">Collections</p>
+    <p class="art-section-note">Browse the archive by category.</p>
+  </div>
   <div class="pile-wall" id="pileWall"></div>
   <div class="group-detail" id="groupDetail" hidden>
     <div class="group-detail-head">
@@ -69,6 +81,6 @@
   <p class="lightbox-caption" id="lightboxCaption"></p>
 </div>
 
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js?v=2"></script>
 </body>
 </html>
