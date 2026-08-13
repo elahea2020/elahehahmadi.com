@@ -237,16 +237,49 @@ section { padding: 6rem 5rem; }
 
 /* PHOTOGRAPHY */
 #art { background: var(--bg); }
-.photo-filters { display: flex; gap: 0.75rem; margin-bottom: 3rem; flex-wrap: wrap; }
-.filter-btn {
-  font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase;
-  padding: 7px 18px; border: 1px solid var(--line);
-  background: transparent; cursor: pointer; color: var(--text-dim);
-  font-family: 'DM Sans', sans-serif; transition: all 0.2s; border-radius: 1px;
+/* Polaroid pile wall (arts landing) */
+.pile-wall { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3.5rem 2.5rem; }
+.pile-wall[hidden], .group-detail[hidden] { display: none; }
+.pile { position: relative; height: 340px; cursor: pointer; transition: transform 0.4s cubic-bezier(.2,.8,.2,1); }
+.pile:hover { transform: translateY(-6px); }
+.pile-stage { position: absolute; inset: 0; }
+.polaroid {
+  position: absolute; background: #f4f2ec; padding: 8px 8px 30px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.62);
+  transform: translate(-50%,-50%) rotate(var(--r));
+  transition: transform 0.55s cubic-bezier(.2,.8,.2,1), box-shadow 0.4s;
 }
-.filter-btn.active, .filter-btn:hover {
-  background: var(--text); color: var(--bg); border-color: var(--text);
+.polaroid img { display: block; width: 100%; object-fit: cover; filter: grayscale(1) contrast(1.05); }
+.polaroid .pcap {
+  position: absolute; left: 0; right: 0; bottom: 6px; text-align: center;
+  font-family: 'Caveat', cursive; font-size: 1rem; color: #2a2a2a; line-height: 1;
+  padding: 0 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
+.pile:hover .polaroid {
+  transform: translate(-50%,-50%) translate(var(--sx),var(--sy)) rotate(var(--sr));
+  box-shadow: 0 18px 42px rgba(0,0,0,0.72);
+}
+.pile-label { position: absolute; left: 0; right: 0; bottom: -8px; z-index: 30; text-align: center; pointer-events: none; }
+.pile-label .name {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.85rem; letter-spacing: 0.02em;
+  display: inline-block; padding: 0.05rem 0.9rem; background: rgba(10,10,10,0.55);
+  backdrop-filter: blur(4px); border-radius: 2px;
+}
+.pile-label .count { display: block; font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-dim); margin-top: 0.4rem; }
+
+/* Group detail (expanded set) */
+.group-detail-head {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  border-bottom: 1px solid var(--line); padding-bottom: 1.4rem; margin-bottom: 2.2rem;
+}
+.group-detail-title { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 2.6rem; }
+.group-detail-title .sub { display: block; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-dim); margin-top: 0.3rem; }
+.group-back {
+  background: transparent; border: 1px solid var(--line-strong); color: var(--text-mute);
+  padding: 0.5rem 1.2rem; border-radius: 2px; font-family: 'DM Sans', sans-serif; font-size: 0.82rem;
+  letter-spacing: 0.05em; cursor: pointer; transition: all 0.2s;
+}
+.group-back:hover { color: var(--text); border-color: var(--text); }
 .photo-grid { columns: 3; gap: 12px; }
 .photo-item {
   break-inside: avoid; margin-bottom: 12px;
@@ -450,6 +483,7 @@ footer {
   .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .series-item { grid-template-columns: 1fr; gap: 1rem; }
   .photo-grid { columns: 2; }
+  .pile-wall { grid-template-columns: repeat(2, 1fr); gap: 3rem 1.5rem; }
   .edu-grid { grid-template-columns: 1fr; }
   .project-row { grid-template-columns: 1fr; gap: 0.5rem; }
   .project-row .link a { display: inline-block; margin-top: 0.5rem; }
@@ -459,5 +493,6 @@ footer {
 }
 @media (max-width: 500px) {
   .photo-grid { columns: 1; }
+  .pile-wall { grid-template-columns: 1fr; }
   .awards-grid { grid-template-columns: 1fr; }
 }

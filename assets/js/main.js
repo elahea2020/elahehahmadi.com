@@ -131,62 +131,77 @@ function renderResearch(research) {
 
 // ─── PHOTOS ──────────────────────────────────────────────────────────────────
 
+// ─── PHOTOGRAPHY (Polaroid pile → group → lightbox) ──────────────────────────
 let allPhotos = [];
+let currentSet = [];
 
 function renderPhotos(data) {
-  if (!document.getElementById('photoGrid')) return;
+  const wall = document.getElementById('pileWall');
+  if (!wall) return;
   allPhotos = data.photos;
 
-  const filtersEl = document.getElementById('photoFilters');
-  filtersEl.innerHTML = `<button class="filter-btn active" onclick="filterPhotos('all', this)">All</button>`;
-  data.categories.forEach(cat => {
-    const btn = document.createElement('button');
-    btn.className = 'filter-btn';
-    btn.textContent = cap(cat);
-    btn.onclick = function() { filterPhotos(cat, this); };
-    filtersEl.appendChild(btn);
-  });
+  // Categories that actually have photos, ordered by count (busiest pile first).
+  const cats = data.categories
+    .filter(c => allPhotos.some(p => p.category === c))
+    .sort((a, b) =>
+      allPhotos.filter(p => p.category === b).length -
+      allPhotos.filter(p => p.category === a).length);
 
-  renderPhotoGrid(allPhotos);
-}
-
-function renderPhotoGrid(photos) {
-  const grid = document.getElementById('photoGrid');
-  if (!grid) return;
-  if (photos.length === 0) {
-    grid.innerHTML = `<p style="color:var(--text-dim);font-style:italic;padding:2rem 0">No photos in this category yet.</p>`;
-    return;
-  }
-  grid.innerHTML = photos.map((p, i) => {
-    const hasImg = p.url && !p.url.includes('placeholder');
-    return `
-      <div class="photo-item" data-cat="${p.category}" onclick="openLightbox(${i})">
-        ${hasImg
-          ? `<img src="${p.url}" alt="${p.caption}" loading="lazy">`
-          : `<div class="photo-placeholder" style="height:${randomHeight()}px">${cap(p.category)}</div>`
-        }
-        <div class="photo-caption"><span>${p.caption}</span></div>
-      </div>
-    `;
+  wall.innerHTML = cats.map((catName, gi) => {
+    const set = allPhotos.filter(p => p.category === catName);
+    const picks = set.slice(0, Math.min(4, set.length));
+    const prints = picks.map((p, i) => {
+      const s = gi * 10 + i;
+      const r = (pileRand(s) * 18 - 9).toFixed(1);
+      const x = (pileRand(s + 2) * 70 - 35).toFixed(0);
+      const y = (pileRand(s + 3) * 34 - 17).toFixed(0);
+      // hover spread: fan outward along a half-circle
+      const ang = (i / Math.max(picks.length - 1, 1)) * Math.PI - Math.PI / 2;
+      const sx = (Math.cos(ang) * 96).toFixed(0);
+      const sy = (Math.sin(ang) * 38 - 4).toFixed(0);
+      // clamp thumbnail ratio so panoramas / tall crops don't become slivers
+      const ar = Math.max(0.62, Math.min((p.width / p.height) || 1.4, 1.9));
+      const w = 150, h = Math.round(w / ar);
+      return `<div class="polaroid" style="--r:${r}deg;--sr:${(r * 1.4).toFixed(1)}deg;--sx:${sx}px;--sy:${sy}px;left:calc(50% + ${x}px);top:calc(46% + ${y}px);width:${w}px;z-index:${i + 1}">
+          <img src="${p.url}" alt="${p.caption}" style="height:${h}px" loading="lazy"><span class="pcap">${p.caption}</span></div>`;
+    }).join('');
+    return `<div class="pile" onclick="openGroup('${catName.replace(/'/g, "\\'")}')">
+        <div class="pile-stage">${prints}</div>
+        <div class="pile-label"><span class="name">${cap(catName)}</span><span class="count">${set.length} photos · explore →</span></div>
+      </div>`;
   }).join('');
 }
 
-function filterPhotos(cat, btn) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  const filtered = cat === 'all' ? allPhotos : allPhotos.filter(p => p.category === cat);
-  renderPhotoGrid(filtered);
+// Deterministic pseudo-random (stable pile layout across reloads).
+function pileRand(seed) {
+  const x = Math.sin(seed * 99.13) * 10000;
+  return x - Math.floor(x);
 }
 
-function randomHeight() {
-  const heights = [200, 240, 280, 300, 320, 260];
-  return heights[Math.floor(Math.random() * heights.length)];
+function openGroup(catName) {
+  const set = allPhotos.filter(p => p.category === catName);
+  currentSet = set;
+  document.getElementById('photoGrid').innerHTML = set.map((p, i) => `
+      <div class="photo-item" onclick="openLightbox(${i})">
+        <img src="${p.url}" alt="${p.caption}" loading="lazy">
+        <div class="photo-caption"><span>${p.caption}</span></div>
+      </div>`).join('');
+  document.getElementById('groupTitle').childNodes[0].nodeValue = cap(catName);
+  document.getElementById('groupSub').textContent = `${set.length} photograph${set.length === 1 ? '' : 's'}`;
+  document.getElementById('pileWall').hidden = true;
+  document.getElementById('groupDetail').hidden = false;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function closeGroup() {
+  document.getElementById('groupDetail').hidden = true;
+  document.getElementById('pileWall').hidden = false;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function openLightbox(index) {
-  const p = allPhotos[index];
-  const hasImg = p.url && !p.url.includes('placeholder');
-  if (!hasImg) return;
+  const p = currentSet[index];
+  if (!p) return;
   document.getElementById('lightboxImg').src = p.url;
   document.getElementById('lightboxCaption').textContent = p.caption;
   document.getElementById('lightbox').classList.add('open');
@@ -198,7 +213,11 @@ function closeLightbox() {
 }
 
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeLightbox();
+  if (e.key !== 'Escape') return;
+  const lb = document.getElementById('lightbox');
+  if (lb && lb.classList.contains('open')) { closeLightbox(); return; }
+  const gd = document.getElementById('groupDetail');
+  if (gd && !gd.hidden) closeGroup();
 });
 
 // ─── ARTICLES ────────────────────────────────────────────────────────────────

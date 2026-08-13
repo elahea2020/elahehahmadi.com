@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Arts — Elaheh Ahmadi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body data-page="arts">
@@ -28,10 +28,14 @@
 </header>
 
 <section id="art">
-  <div class="photo-filters" id="photoFilters">
-    <button class="filter-btn active" onclick="filterPhotos('all', this)">All</button>
+  <div class="pile-wall" id="pileWall"></div>
+  <div class="group-detail" id="groupDetail" hidden>
+    <div class="group-detail-head">
+      <h2 class="group-detail-title" id="groupTitle">—<span class="sub" id="groupSub"></span></h2>
+      <button class="group-back" onclick="closeGroup()">← All groups</button>
+    </div>
+    <div class="photo-grid" id="photoGrid"></div>
   </div>
-  <div class="photo-grid" id="photoGrid"></div>
 </section>
 
 <footer>

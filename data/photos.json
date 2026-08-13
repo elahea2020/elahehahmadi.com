@@ -1,76 +1,686 @@
 {
-  "categories": ["nature", "urban", "portrait", "abstract"],
-  "photos": [
-    { "id": "p001", "category": "abstract", "caption": "Collage", "url": "photos/abstract/Collage.jpg", "width": 2048, "height": 1094 },
-    { "id": "p002", "category": "abstract", "caption": "Glowy Fish", "url": "photos/abstract/glowyfish.jpg", "width": 2048, "height": 1365 },
-    { "id": "p003", "category": "abstract", "caption": "It's Pure", "url": "photos/abstract/ItsPure.jpg", "width": 2048, "height": 1365 },
-    { "id": "p004", "category": "abstract", "caption": "Life Is Moving", "url": "photos/abstract/LifeIsMoving.jpg", "width": 6240, "height": 4160 },
-    { "id": "p005", "category": "abstract", "caption": "Nightmare", "url": "photos/abstract/NightMare.jpg", "width": 2048, "height": 1365 },
-    { "id": "p006", "category": "abstract", "caption": "Unbelievable III", "url": "photos/abstract/unblievable_3.jpg", "width": 2048, "height": 1365 },
-    { "id": "p007", "category": "abstract", "caption": "Walking in Heaven", "url": "photos/abstract/WalkingInHeaven.jpg", "width": 1365, "height": 2048 },
-    { "id": "p008", "category": "abstract", "caption": "The Way", "url": "photos/abstract/wayto.jpg", "width": 2048, "height": 1365 },
-
-    { "id": "p009", "category": "nature", "caption": "Study 16", "url": "photos/nature/16.jpg", "width": 2048, "height": 1365 },
-    { "id": "p010", "category": "nature", "caption": "Study 02", "url": "photos/nature/2.jpg", "width": 2048, "height": 1365 },
-    { "id": "p011", "category": "nature", "caption": "Study 23", "url": "photos/nature/23%202.jpg", "width": 2048, "height": 1277 },
-    { "id": "p012", "category": "nature", "caption": "Study 05", "url": "photos/nature/5.jpg", "width": 2048, "height": 1365 },
-    { "id": "p013", "category": "nature", "caption": "Tahoe", "url": "photos/nature/6_tahoe.jpg", "width": 2048, "height": 1365 },
-    { "id": "p014", "category": "nature", "caption": "Study 07", "url": "photos/nature/7.jpg", "width": 2048, "height": 1374 },
-    { "id": "p015", "category": "nature", "caption": "Another World", "url": "photos/nature/Another_world_1.jpg", "width": 2048, "height": 1365 },
-    { "id": "p016", "category": "nature", "caption": "Foggy Tree", "url": "photos/nature/foggyTree.jpg", "width": 2048, "height": 1365 },
-    { "id": "p017", "category": "nature", "caption": "Lake Cachuma", "url": "photos/nature/lakecachuma_2.jpg", "width": 2048, "height": 1274 },
-    { "id": "p018", "category": "nature", "caption": "Lightscape V", "url": "photos/nature/lightscape-5.jpg", "width": 5007, "height": 3338 },
-    { "id": "p019", "category": "nature", "caption": "Lightscape VIII", "url": "photos/nature/lightscape-8.jpg", "width": 6240, "height": 4160 },
-    { "id": "p020", "category": "nature", "caption": "Long Night", "url": "photos/nature/LongNight.jpg", "width": 2048, "height": 1187 },
-    { "id": "p021", "category": "nature", "caption": "Signature", "url": "photos/nature/signature.jpg", "width": 2048, "height": 1365 },
-    { "id": "p022", "category": "nature", "caption": "Smoky Mountain", "url": "photos/nature/SmokyMountain1.jpg", "width": 2048, "height": 1365 },
-    { "id": "p023", "category": "nature", "caption": "Starry Night — Mammoth", "url": "photos/nature/StartyNightMamooth_1.jpg", "width": 2048, "height": 1365 },
-    { "id": "p024", "category": "nature", "caption": "Yosemite Valley VII", "url": "photos/nature/YosemiteValley_7.jpg", "width": 2048, "height": 1236 },
-    { "id": "p025", "category": "nature", "caption": "Yosemite Valley IX", "url": "photos/nature/YosemiteValley_9.jpg", "width": 2048, "height": 1081 },
-
-    { "id": "p026", "category": "portrait", "caption": "I Have Wings", "url": "photos/portrait/IHaveWings.jpg", "width": 2048, "height": 1365 },
-    { "id": "p027", "category": "portrait", "caption": "Lightscape IV", "url": "photos/portrait/lightscape-4.jpg", "width": 5246, "height": 3497 },
-    { "id": "p028", "category": "portrait", "caption": "Lightscape VII", "url": "photos/portrait/lightscape-7.jpg", "width": 6240, "height": 4160 },
-
-    { "id": "p029", "category": "urban", "caption": "I Was Dead", "url": "photos/urban/IwasDead.jpg", "width": 2048, "height": 1365 },
-    { "id": "p030", "category": "urban", "caption": "Lightscape VI", "url": "photos/urban/lightscape-6.jpg", "width": 6240, "height": 4160 }
+  "categories": [
+    "abstract",
+    "analog",
+    "axel",
+    "collages",
+    "nature",
+    "night photography",
+    "portrait",
+    "urban"
   ],
-  "_archived_photos": [
+  "photos": [
     {
-      "id": "a001",
-      "category": "portrait",
-      "caption": "Portrait series — Boston, 2023",
-      "url": "photos/portrait/placeholder.jpg",
-      "width": 800,
-      "height": 1200,
-      "date": "2023-06-01"
-    },
-    {
-      "id": "a002",
-      "category": "landscape",
-      "caption": "Iceland, 2022",
-      "url": "photos/landscape/placeholder.jpg",
-      "width": 1600,
-      "height": 900,
-      "date": "2022-09-15"
-    },
-    {
-      "id": "a003",
+      "id": "p001",
       "category": "abstract",
-      "caption": "Light study, MIT 2021",
-      "url": "photos/abstract/placeholder.jpg",
-      "width": 1000,
-      "height": 1000,
-      "date": "2021-03-10"
+      "caption": "The Sunset",
+      "url": "photos/abstract/16.jpg",
+      "width": 2200,
+      "height": 1467
     },
     {
-      "id": "a004",
-      "category": "urban",
-      "caption": "Cambridge streets",
-      "url": "photos/urban/placeholder.jpg",
+      "id": "p002",
+      "category": "abstract",
+      "caption": "Cloud Party",
+      "url": "photos/abstract/7.jpg",
+      "width": 2200,
+      "height": 1467
+    },
+    {
+      "id": "p003",
+      "category": "abstract",
+      "caption": "IShattered Into Pieces",
+      "url": "photos/abstract/IShatteredIntoPieces.jpg",
+      "width": 1600,
+      "height": 1067
+    },
+    {
+      "id": "p004",
+      "category": "abstract",
+      "caption": "It's Pure",
+      "url": "photos/abstract/ItsPure.jpg",
+      "width": 1600,
+      "height": 1066
+    },
+    {
+      "id": "p005",
+      "category": "abstract",
+      "caption": "Life Is Moving",
+      "url": "photos/abstract/LifeIsMoving.jpg",
+      "width": 1600,
+      "height": 1066
+    },
+    {
+      "id": "p006",
+      "category": "abstract",
+      "caption": "Nightmare",
+      "url": "photos/abstract/NightMare.jpg",
+      "width": 1600,
+      "height": 1066
+    },
+    {
+      "id": "p007",
+      "category": "abstract",
+      "caption": "Walking in Heaven",
+      "url": "photos/abstract/WalkingInHeaven.jpg",
+      "width": 1066,
+      "height": 1600
+    },
+    {
+      "id": "p008",
+      "category": "abstract",
+      "caption": "Cypress",
+      "url": "photos/abstract/cypress-20.jpg",
+      "width": 2000,
+      "height": 1333
+    },
+    {
+      "id": "p009",
+      "category": "abstract",
+      "caption": "Glowy Fish",
+      "url": "photos/abstract/glowyfish.jpg",
+      "width": 1600,
+      "height": 1066
+    },
+    {
+      "id": "p010",
+      "category": "abstract",
+      "caption": "Unbelievable",
+      "url": "photos/abstract/unblievable_3.jpg",
+      "width": 1600,
+      "height": 1066
+    },
+    {
+      "id": "p011",
+      "category": "abstract",
+      "caption": "The Way",
+      "url": "photos/abstract/wayto.jpg",
+      "width": 1600,
+      "height": 1066
+    },
+    {
+      "id": "p012",
+      "category": "analog",
+      "caption": "Chaos ",
+      "url": "photos/analog/chaos%200001.jpg",
+      "width": 1423,
+      "height": 1800
+    },
+    {
+      "id": "p013",
+      "category": "analog",
+      "caption": "Boston Days",
+      "url": "photos/analog/chaos%200002.jpg",
+      "width": 1961,
+      "height": 1326
+    },
+    {
+      "id": "p014",
+      "category": "analog",
+      "caption": "Crazy Monkey",
+      "url": "photos/analog/chaos%200003.jpg",
+      "width": 2013,
+      "height": 1595
+    },
+    {
+      "id": "p015",
+      "category": "analog",
+      "caption": "Upside down",
+      "url": "photos/analog/chaos%200005.jpg",
+      "width": 1593,
+      "height": 2019
+    },
+    {
+      "id": "p016",
+      "category": "analog",
+      "caption": "The past",
+      "url": "photos/analog/chaos%200006.jpg",
+      "width": 2013,
+      "height": 1593
+    },
+    {
+      "id": "p017",
+      "category": "analog",
+      "caption": "Yearning",
+      "url": "photos/analog/chaos%200010.jpg",
+      "width": 1985,
+      "height": 1367
+    },
+    {
+      "id": "p018",
+      "category": "analog",
+      "caption": "Vertigo",
+      "url": "photos/analog/chaos%200014.jpg",
+      "width": 1800,
+      "height": 1420
+    },
+    {
+      "id": "p019",
+      "category": "analog",
+      "caption": "The vegan spot",
+      "url": "photos/analog/chaos%200017.jpg",
+      "width": 1800,
+      "height": 1286
+    },
+    {
+      "id": "p020",
+      "category": "analog",
+      "caption": "I will wait",
+      "url": "photos/analog/chaos%200018.jpg",
+      "width": 1319,
+      "height": 1795
+    },
+    {
+      "id": "p021",
+      "category": "analog",
+      "caption": "Doggo",
+      "url": "photos/analog/scan1.jpg",
+      "width": 2014,
+      "height": 1572
+    },
+    {
+      "id": "p022",
+      "category": "analog",
+      "caption": "Life Goes",
+      "url": "photos/analog/scan12.jpg",
+      "width": 2200,
+      "height": 1488
+    },
+    {
+      "id": "p023",
+      "category": "analog",
+      "caption": "Darwins",
+      "url": "photos/analog/scan13.jpg",
+      "width": 2000,
+      "height": 1612
+    },
+    {
+      "id": "p024",
+      "category": "analog",
+      "caption": "The day I dreaded",
+      "url": "photos/analog/scan18.jpg",
+      "width": 1962,
+      "height": 1420
+    },
+    {
+      "id": "p025",
+      "category": "analog",
+      "caption": "Hopeful",
+      "url": "photos/analog/scan2.jpg",
+      "width": 1971,
+      "height": 1400
+    },
+    {
+      "id": "p026",
+      "category": "analog",
+      "caption": "Silent Joy",
+      "url": "photos/analog/scan23.jpg",
+      "width": 1593,
+      "height": 2021
+    },
+    {
+      "id": "p027",
+      "category": "analog",
+      "caption": "As we go",
+      "url": "photos/analog/scan4.jpg",
+      "width": 1800,
+      "height": 1496
+    },
+    {
+      "id": "p028",
+      "category": "analog",
+      "caption": "Hidden life",
+      "url": "photos/analog/scan43.jpg",
+      "width": 1800,
+      "height": 1431
+    },
+    {
+      "id": "p029",
+      "category": "axel",
+      "caption": "Happy Baby",
+      "url": "photos/axel/Axel_1.jpg",
+      "width": 2200,
+      "height": 1467
+    },
+    {
+      "id": "p030",
+      "category": "axel",
+      "caption": "Hiii",
+      "url": "photos/axel/Axel_11.jpg",
+      "width": 2200,
+      "height": 1467
+    },
+    {
+      "id": "p031",
+      "category": "axel",
+      "caption": "Sleepy",
+      "url": "photos/axel/Axel_4.jpg",
+      "width": 2200,
+      "height": 1467
+    },
+    {
+      "id": "p032",
+      "category": "axel",
+      "caption": "Axel 6",
+      "url": "photos/axel/Axel_6.jpg",
+      "width": 2200,
+      "height": 1467
+    },
+    {
+      "id": "p033",
+      "category": "axel",
+      "caption": "Who dat",
+      "url": "photos/axel/Axel_9.jpg",
+      "width": 2200,
+      "height": 1467
+    },
+    {
+      "id": "p034",
+      "category": "collages",
+      "caption": "Collage",
+      "url": "photos/collages/Collage.jpg",
+      "width": 1600,
+      "height": 854
+    },
+    {
+      "id": "p035",
+      "category": "collages",
+      "caption": "Dance It Out",
+      "url": "photos/collages/Dance_it_out.jpg",
+      "width": 2200,
+      "height": 196
+    },
+    {
+      "id": "p036",
+      "category": "collages",
+      "caption": "Khafaghan",
+      "url": "photos/collages/Khafaghan_master.jpg",
+      "width": 2200,
+      "height": 1100
+    },
+    {
+      "id": "p037",
+      "category": "nature",
+      "caption": "Another World",
+      "url": "photos/nature/Another_world_1.jpg",
+      "width": 1600,
+      "height": 1066
+    },
+    {
+      "id": "p038",
+      "category": "nature",
+      "caption": "Me OR Ansel",
+      "url": "photos/nature/MeORAnsel_1.jpg",
+      "width": 1400,
+      "height": 933
+    },
+    {
+      "id": "p039",
+      "category": "nature",
+      "caption": "Smoky Mountain",
+      "url": "photos/nature/SmokyMountain1.jpg",
+      "width": 1600,
+      "height": 1066
+    },
+    {
+      "id": "p040",
+      "category": "nature",
+      "caption": "Sunset",
+      "url": "photos/nature/Sunset3.jpg",
+      "width": 2200,
+      "height": 1467
+    },
+    {
+      "id": "p041",
+      "category": "nature",
+      "caption": "Yosemite Valley",
+      "url": "photos/nature/YosemiteValley_12.jpg",
+      "width": 1800,
+      "height": 955
+    },
+    {
+      "id": "p042",
+      "category": "nature",
+      "caption": "Yosemite Village",
+      "url": "photos/nature/YosemiteVillage.jpg",
+      "width": 1400,
+      "height": 933
+    },
+    {
+      "id": "p043",
+      "category": "nature",
+      "caption": "Cypress",
+      "url": "photos/nature/cypress-25.jpg",
+      "width": 933,
+      "height": 1400
+    },
+    {
+      "id": "p044",
+      "category": "nature",
+      "caption": "Foggy Tree",
+      "url": "photos/nature/foggyTree.jpg",
+      "width": 1600,
+      "height": 1066
+    },
+    {
+      "id": "p045",
+      "category": "nature",
+      "caption": "Lightscape",
+      "url": "photos/nature/lightscape-8.jpg",
+      "width": 1600,
+      "height": 1066
+    },
+    {
+      "id": "p046",
+      "category": "nature",
+      "caption": "The Way",
+      "url": "photos/nature/wayto.jpg",
+      "width": 1800,
+      "height": 1200
+    },
+    {
+      "id": "p047",
+      "category": "night photography",
+      "caption": "Joshua Tree",
+      "url": "photos/night_photography/2.jpg",
+      "width": 1600,
+      "height": 1066
+    },
+    {
+      "id": "p048",
+      "category": "night photography",
+      "caption": "Lake Tahoe",
+      "url": "photos/night_photography/23%202.jpg",
+      "width": 1600,
+      "height": 997
+    },
+    {
+      "id": "p049",
+      "category": "night photography",
+      "caption": "Study 05",
+      "url": "photos/night_photography/5.jpg",
+      "width": 1600,
+      "height": 1066
+    },
+    {
+      "id": "p050",
+      "category": "night photography",
+      "caption": "The Comet",
+      "url": "photos/night_photography/5_tahoe.jpg",
+      "width": 2200,
+      "height": 1467
+    },
+    {
+      "id": "p051",
+      "category": "night photography",
+      "caption": "Tahoe as we look",
+      "url": "photos/night_photography/6_tahoe.jpg",
+      "width": 1600,
+      "height": 1066
+    },
+    {
+      "id": "p052",
+      "category": "night photography",
+      "caption": "Alone And Fearless",
+      "url": "photos/night_photography/AloneAndFearless.jpg",
+      "width": 2200,
+      "height": 1467
+    },
+    {
+      "id": "p053",
+      "category": "night photography",
+      "caption": "Long Night",
+      "url": "photos/night_photography/LongNight.jpg",
+      "width": 1600,
+      "height": 927
+    },
+    {
+      "id": "p054",
+      "category": "night photography",
+      "caption": "Starry Night — Mammoth",
+      "url": "photos/night_photography/StartyNightMamooth_1.jpg",
+      "width": 1600,
+      "height": 1066
+    },
+    {
+      "id": "p055",
+      "category": "night photography",
+      "caption": "Yosemite Valley",
+      "url": "photos/night_photography/YosemiteValley_6.jpg",
+      "width": 2000,
+      "height": 1281
+    },
+    {
+      "id": "p056",
+      "category": "night photography",
+      "caption": "Yosemite Valley",
+      "url": "photos/night_photography/YosemiteValley_7.jpg",
+      "width": 1600,
+      "height": 965
+    },
+    {
+      "id": "p057",
+      "category": "night photography",
+      "caption": "Yosemite Valley",
+      "url": "photos/night_photography/YosemiteValley_9.jpg",
+      "width": 1600,
+      "height": 844
+    },
+    {
+      "id": "p058",
+      "category": "night photography",
+      "caption": "Lake Cachuma",
+      "url": "photos/night_photography/lakecachuma_2.jpg",
+      "width": 1600,
+      "height": 995
+    },
+    {
+      "id": "p059",
+      "category": "night photography",
+      "caption": "Mamoth Lake",
+      "url": "photos/night_photography/signature.jpg",
+      "width": 1600,
+      "height": 1066
+    },
+    {
+      "id": "p060",
+      "category": "portrait",
+      "caption": "All I want",
+      "url": "photos/portrait/AllIwant.jpg",
       "width": 1200,
-      "height": 800,
-      "date": "2022-11-20"
+      "height": 800
+    },
+    {
+      "id": "p061",
+      "category": "portrait",
+      "caption": "Cry For Help",
+      "url": "photos/portrait/CryForHelp_2.jpg",
+      "width": 1400,
+      "height": 933
+    },
+    {
+      "id": "p062",
+      "category": "portrait",
+      "caption": "I Have Wings",
+      "url": "photos/portrait/IHaveWings.jpg",
+      "width": 1600,
+      "height": 1066
+    },
+    {
+      "id": "p063",
+      "category": "portrait",
+      "caption": "free",
+      "url": "photos/portrait/IMG_3394.jpg",
+      "width": 2200,
+      "height": 1467
+    },
+    {
+      "id": "p064",
+      "category": "portrait",
+      "caption": "Mostaf",
+      "url": "photos/portrait/Mostaf_5.jpg",
+      "width": 2200,
+      "height": 1467
+    },
+    {
+      "id": "p065",
+      "category": "portrait",
+      "caption": "Nika",
+      "url": "photos/portrait/Nika_2.jpg",
+      "width": 2200,
+      "height": 1467
+    },
+    {
+      "id": "p066",
+      "category": "portrait",
+      "caption": "Lightscape",
+      "url": "photos/portrait/lightscape-4.jpg",
+      "width": 1600,
+      "height": 1066
+    },
+    {
+      "id": "p067",
+      "category": "portrait",
+      "caption": "Lightscape",
+      "url": "photos/portrait/lightscape-7.jpg",
+      "width": 1600,
+      "height": 1066
+    },
+    {
+      "id": "p068",
+      "category": "portrait",
+      "caption": "Looking For Nothing",
+      "url": "photos/portrait/lookingForNothing.jpg",
+      "width": 2200,
+      "height": 1467
+    },
+    {
+      "id": "p069",
+      "category": "urban",
+      "caption": "Texas Roads",
+      "url": "photos/urban/10.jpg",
+      "width": 2200,
+      "height": 1232
+    },
+    {
+      "id": "p070",
+      "category": "urban",
+      "caption": "Who knows",
+      "url": "photos/urban/9.jpg",
+      "width": 2200,
+      "height": 1467
+    },
+    {
+      "id": "p071",
+      "category": "urban",
+      "caption": "Big Brother",
+      "url": "photos/urban/BigBrother.jpg",
+      "width": 2200,
+      "height": 1467
+    },
+    {
+      "id": "p072",
+      "category": "urban",
+      "caption": "Colors",
+      "url": "photos/urban/Colors.jpg",
+      "width": 2200,
+      "height": 1467
+    },
+    {
+      "id": "p073",
+      "category": "urban",
+      "caption": "I Was Dead",
+      "url": "photos/urban/IwasDead.jpg",
+      "width": 1600,
+      "height": 1066
+    },
+    {
+      "id": "p074",
+      "category": "urban",
+      "caption": "Memory",
+      "url": "photos/urban/Memory.jpg",
+      "width": 1600,
+      "height": 1067
+    },
+    {
+      "id": "p075",
+      "category": "urban",
+      "caption": "Streets Of LA 3",
+      "url": "photos/urban/Streets_of_LA_3.jpg",
+      "width": 1600,
+      "height": 1067
+    },
+    {
+      "id": "p076",
+      "category": "urban",
+      "caption": "Streets Of LA 5",
+      "url": "photos/urban/Streets_of_LA_5.jpg",
+      "width": 2200,
+      "height": 1467
+    },
+    {
+      "id": "p077",
+      "category": "urban",
+      "caption": "Streets Of LA 6",
+      "url": "photos/urban/Streets_of_LA_6_C.jpg",
+      "width": 2200,
+      "height": 1467
+    },
+    {
+      "id": "p078",
+      "category": "urban",
+      "caption": "Art",
+      "url": "photos/urban/art.jpg",
+      "width": 2200,
+      "height": 1467
+    },
+    {
+      "id": "p079",
+      "category": "urban",
+      "caption": "Lightscape",
+      "url": "photos/urban/lightscape-6.jpg",
+      "width": 1600,
+      "height": 1066
+    },
+    {
+      "id": "p080",
+      "category": "urban",
+      "caption": "Lonely chair",
+      "url": "photos/urban/lonelychair.jpg",
+      "width": 2200,
+      "height": 1466
+    },
+    {
+      "id": "p081",
+      "category": "urban",
+      "caption": "Museum",
+      "url": "photos/urban/musuem.jpg",
+      "width": 2200,
+      "height": 1467
+    },
+    {
+      "id": "p082",
+      "category": "urban",
+      "caption": "Old days",
+      "url": "photos/urban/olddays.jpg",
+      "width": 2200,
+      "height": 1467
+    },
+    {
+      "id": "p083",
+      "category": "urban",
+      "caption": "People",
+      "url": "photos/urban/people-bw.jpg",
+      "width": 1600,
+      "height": 1066
+    },
+    {
+      "id": "p084",
+      "category": "urban",
+      "caption": "Streets Of LA 4",
+      "url": "photos/urban/streets_of_LA_4.jpg",
+      "width": 1600,
+      "height": 1067
     }
   ]
 }
