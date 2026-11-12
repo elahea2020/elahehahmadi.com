@@ -7,8 +7,9 @@ This file is for Claude Code. Read this at the start of every session before doi
 ## Who This Is For
 
 **Elaheh Ahmadi** — entrepreneur, AI researcher, photographer.
-- Co-founder & Chief AI Officer, VIVA AI (getviva.ai)
-- Co-founder, Themis AI (themisai.io)
+- AI Researcher, Cisco Foundation AI (Sep 2026 – present): building recursive self-improvement (RSI) systems and efficient training of small, specialized models. Keep public descriptions of this work at exactly that level.
+- Co-founder & former Chief AI Scientist, VIVA AI (getviva.ai), 2024 – 2026, now Advisor
+- Co-founder & former CEO, Themis AI (themisai.io), 2021 – 2023, now Advisor
 - MEng EECS, MIT
 - Forbes 30 Under 30 (2023)
 
@@ -83,9 +84,11 @@ elahehahmadi.com/
 - `publications` — array of `{ venue, title, url }`
 - `talks` — array of `{ venue, title, url }` (renders below publications on landing)
 - `links` — array of `{ label, url }` (drives About sidebar + footer Contact column + landing Contact section)
+- `explaining` — `{ label, title, description, cta, url }` for the Explaining AI / Papers in Motion band on landing
 - `contact.web3forms_key` — Web3Forms access key for contact form
 
 ### Projects (`data/projects.json`)
+- `current` — array of current roles (same shape as ventures; `url` may be empty) → Current Work cards on landing + projects page
 - `ventures` — array of `{ id, name, role, tagline, description, url, year }` (companies)
 - `research` — array of `{ id, title, summary, venue, url, year }` (papers / open-source / patents)
 
@@ -213,3 +216,9 @@ git push
 | Google Scholar | https://scholar.google.com/citations?user=LPf5Vq0AAAAJ |
 | Web3Forms (contact form) | https://web3forms.com |
 | Cloudflare R2 (if needed for photos) | https://dash.cloudflare.com |
+
+---
+
+## Text that lives in HTML (not JSON)
+
+The hero description, section headings, contact intro, page headers and the footer blurb are hardcoded in the HTML files, as are each page's `<title>` and meta/Open Graph tags. Update those in every page when positioning changes. Last refresh: 2026-11-11 (Cisco Foundation AI positioning; Blogs nav renamed Writing).

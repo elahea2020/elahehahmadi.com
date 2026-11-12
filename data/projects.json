@@ -1,22 +1,32 @@
 {
+  "current": [
+    {
+      "id": "cisco-foundation-ai",
+      "name": "Cisco Foundation AI",
+      "role": "AI Researcher",
+      "year": "September 2026 – Present",
+      "tagline": "Building recursive self-improvement systems and working on efficient training of small, specialized models.",
+      "url": ""
+    }
+  ],
   "ventures": [
     {
       "id": "viva-ai",
       "name": "VIVA AI",
-      "role": "Co-founder & Chief AI Officer",
-      "tagline": "Next-generation AI Receptionist & Office Manager for dental and medical offices.",
-      "description": "Leading AI strategy and product for a vertical AI platform automating front-desk operations, scheduling, and patient communications across hundreds of practices.",
+      "role": "Co-founder & former Chief AI Scientist · Now Advisor",
+      "tagline": "Built real-time voice AI to help dental and medical practices handle patient conversations and front-desk operations.",
+      "description": "Built real-time voice AI to help dental and medical practices handle patient conversations and front-desk operations.",
       "url": "http://getviva.ai",
-      "year": "2024 – Present"
+      "year": "2024 – 2026"
     },
     {
       "id": "themis-ai",
       "name": "Themis AI",
-      "role": "Co-founder",
-      "tagline": "Empowering the world to create, advance, and deploy trustworthy AI.",
-      "description": "MIT spin-out building uncertainty-aware tooling for production deep learning systems — used by enterprises to quantify and mitigate risk in their models.",
+      "role": "Co-founder & former CEO · Now Advisor",
+      "tagline": "Co-founded an MIT CSAIL spin-out bringing uncertainty-aware machine learning from research into practical tools for more reliable AI.",
+      "description": "Co-founded an MIT CSAIL spin-out bringing uncertainty-aware machine learning from research into practical tools for more reliable AI.",
       "url": "http://themisai.io",
-      "year": "2021 – Present"
+      "year": "2021 – 2023"
     }
   ],
   "research": [
@@ -40,14 +50,14 @@
       "id": "capsa",
       "title": "Capsa: A Unified Framework for Quantifying Risk in Deep Neural Networks",
       "summary": "Open-source framework wrapping arbitrary PyTorch/TF models with bias, label-noise, and epistemic uncertainty estimators.",
-      "venue": "NeurIPS 2022",
-      "url": "#",
+      "venue": "NeurIPS 2022 Workshop (ML4AD)",
+      "url": "https://arxiv.org/abs/2308.00231",
       "year": "2022"
     },
     {
       "id": "dnn-optimization-patent",
       "title": "Systems and Methods for Deep Learning Model Optimization",
-      "summary": "Patented techniques for compressing and accelerating deep learning models without sacrificing reliability.",
+      "summary": "Methods that find inefficient combinations of operations in a deep learning model and replace them with optimized subgraphs.",
       "venue": "US Patent 2025",
       "url": "https://patents.google.com/patent/US20250111230A1/en",
       "year": "2025"

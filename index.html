@@ -3,10 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elaheh Ahmadi</title>
+<title>Elaheh Ahmadi | AI Researcher at Cisco Foundation AI</title>
+<meta name="description" content="AI researcher at Cisco Foundation AI, building recursive self-improvement systems and working on efficient training of small, specialized models. Co-founder of VIVA AI and Themis AI.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Elaheh Ahmadi | AI Researcher at Cisco Foundation AI">
+<meta property="og:description" content="AI researcher at Cisco Foundation AI, building recursive self-improvement systems and working on efficient training of small, specialized models. Co-founder of VIVA AI and Themis AI.">
+<meta property="og:url" content="https://elahehahmadi.com/">
+<meta property="og:image" content="https://elahehahmadi.com/assets/images/elahe-solve.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://elahehahmadi.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=2">
+<link rel="stylesheet" href="assets/css/style.css?v=3">
 </head>
 <body data-page="home">
 
@@ -15,7 +23,7 @@
   <ul class="nav-links">
     <li><a href="index.html" class="active">Home</a></li>
     <li><a href="projects.html">Projects</a></li>
-    <li><a href="blogs.html">Blogs</a></li>
+    <li><a href="blogs.html">Writing</a></li>
     <li><a href="arts.html">Arts</a></li>
   </ul>
   <button class="nav-mobile-toggle" onclick="toggleMobileNav()">☰</button>
@@ -25,8 +33,11 @@
   <div class="hero-text">
     <p class="hero-eyebrow" id="heroRoles"></p>
     <h1 class="hero-name">Elaheh<br><em>Ahmadi</em></h1>
-    <p class="hero-desc">Building trustworthy AI at the intersection of technology and human impact — from dental offices to deep learning research.</p>
-    <a class="hero-cta" href="#about">Career highlights &rarr;</a>
+    <p class="hero-desc">I'm an AI researcher at Cisco Foundation AI, building recursive self-improvement (RSI) systems and working on efficient training of small, specialized models.<br><br>Previously, I co-founded VIVA AI and Themis AI.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:1.25rem 2.5rem;">
+      <a class="hero-cta" href="projects.html">Research &amp; Projects &rarr;</a>
+      <a class="hero-cta" href="#contact">Get in Touch &rarr;</a>
+    </div>
   </div>
   <div class="hero-image">
     <img src="assets/images/elahe-solve.jpg" alt="Elaheh Ahmadi">
@@ -52,11 +63,24 @@
   </div>
 </section>
 
+<section id="current">
+  <p class="section-label">Current Work</p>
+  <h2 class="section-title">What I'm working on</h2>
+  <div class="ventures-grid" id="currentGrid" style="grid-template-columns:1fr;"></div>
+</section>
+
 <section id="ventures">
   <p class="section-label">Ventures</p>
-  <h2 class="section-title">Companies I'm building</h2>
+  <h2 class="section-title">Companies I co-founded</h2>
   <div class="ventures-grid" id="venturesGrid"></div>
   <a class="section-cta" href="projects.html">See all projects &rarr;</a>
+</section>
+
+<section id="explaining">
+  <p class="section-label" id="explainingLabel">Explaining AI</p>
+  <h2 class="section-title" id="explainingTitle">Papers in Motion</h2>
+  <p class="contact-desc" id="explainingDesc" style="max-width:640px;"></p>
+  <a class="section-cta" id="explainingCta" href="#" target="_blank" rel="noopener"></a>
 </section>
 
 <!--
@@ -71,8 +95,8 @@
   <p class="section-label">Contact</p>
   <h2 class="section-title">Get in Touch</h2>
   <div class="contact-grid">
-    <div class="contact-intro">
-      <p class="contact-desc">For collaborations, speaking invitations, or a consultation on AI, healthcare technology, or entrepreneurship — drop a note.</p>
+    <div class="contact-intro" style="min-width:0;">
+      <p class="contact-desc">For research collaborations, speaking invitations, or conversations about AI, get in touch.</p>
       <div class="contact-links" id="contactLinks"></div>
     </div>
     <form class="contact-form" id="contactForm">
@@ -88,13 +112,13 @@
   <div class="footer-grid">
     <div class="footer-brand">
       <a class="nav-logo" href="index.html">Elaheh Ahmadi</a>
-      <p>For collaborations, speaking invitations, or consultations on AI, healthcare technology, and entrepreneurship — get in touch.</p>
+      <p>Researcher, founder, and photographer. For research collaborations and speaking invitations, get in touch.</p>
     </div>
     <div class="footer-col">
       <h4>Explore</h4>
       <ul>
         <li><a href="projects.html">Projects</a></li>
-        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="blogs.html">Writing</a></li>
         <li><a href="arts.html">Arts</a></li>
       </ul>
     </div>
@@ -109,6 +133,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=2"></script>
+<script src="assets/js/main.js?v=3"></script>
 </body>
 </html>

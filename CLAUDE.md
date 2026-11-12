@@ -1,6 +1,6 @@
 # Elaheh Ahmadi — Personal Website
 
-A static, multi-page site hosted on GitHub Pages. Theme is black & white (dark). All content is driven by JSON files in `data/`. **Never edit HTML or CSS for content changes** — always edit the JSON files.
+A static, multi-page site hosted on GitHub Pages. Theme is black & white (dark). Most content is driven by JSON files in `data/`; edit those for content changes. Exception: hero text, section headings, page headers, the footer blurb and the `<title>`/meta tags are hardcoded in the HTML pages (see MEMORY.md).
 
 ---
 

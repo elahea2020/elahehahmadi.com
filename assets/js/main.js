@@ -28,13 +28,16 @@ async function init() {
       loadJSON('data/projects.json'),
       loadJSON('data/education.json'),
     ]);
+    renderCurrent(projects.current);
     renderVenturesGrid(projects.ventures);
+    renderExplaining(profile.explaining);
     renderEducation(education);
     renderContactLinks(profile);
     setupContactForm(profile);
   }
   if (page === 'projects') {
     const projects = await loadJSON('data/projects.json');
+    renderCurrent(projects.current);
     renderVenturesGrid(projects.ventures);
     renderResearch(projects.research);
   }
@@ -104,18 +107,40 @@ function renderAbout(p) {
 
 // ─── VENTURES ────────────────────────────────────────────────────────────────
 
-function renderVenturesGrid(ventures) {
-  const el = document.getElementById('venturesGrid');
-  if (!el) return;
-  el.innerHTML = ventures.map(v => `
+function ventureCard(v) {
+  return `
     <article class="venture-card">
       <p class="venture-role">${v.role}</p>
       <h3 class="venture-name">${v.name}</h3>
       <p class="venture-year">${v.year}</p>
       <p class="venture-tag">${v.tagline}</p>
-      <a class="venture-link" href="${v.url}" target="_blank" rel="noopener">Visit ${v.name} →</a>
-    </article>
-  `).join('');
+      ${v.url ? `<a class="venture-link" href="${v.url}" target="_blank" rel="noopener">Visit ${v.name} →</a>` : ''}
+    </article>`;
+}
+
+function renderVenturesGrid(ventures) {
+  const el = document.getElementById('venturesGrid');
+  if (!el || !ventures) return;
+  el.innerHTML = ventures.map(ventureCard).join('');
+}
+
+// Current role(s): same card style as ventures, rendered into #currentGrid.
+function renderCurrent(current) {
+  const el = document.getElementById('currentGrid');
+  if (!el || !current) return;
+  el.innerHTML = current.map(ventureCard).join('');
+}
+
+// "Explaining AI" band on the landing page (Papers in Motion).
+function renderExplaining(x) {
+  const desc = document.getElementById('explainingDesc');
+  if (!desc || !x) return;
+  document.getElementById('explainingLabel').textContent = x.label;
+  document.getElementById('explainingTitle').textContent = x.title;
+  desc.textContent = x.description;
+  const cta = document.getElementById('explainingCta');
+  cta.href = x.url;
+  cta.innerHTML = `${x.cta} &rarr;`;
 }
 
 // ─── RESEARCH PROJECTS ───────────────────────────────────────────────────────
@@ -308,7 +333,7 @@ function renderContactLinks(p) {
   el.innerHTML = p.links.map(l => `
     <div class="contact-link-row">
       <span class="contact-link-label">${l.label}</span>
-      <a class="contact-link" href="${l.url}" target="_blank" rel="noopener">${l.url.replace(/^https?:\/\//, '')}</a>
+      <a class="contact-link" href="${l.url}" target="_blank" rel="noopener" style="overflow-wrap:anywhere;">${l.display || l.url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}</a>
     </div>
   `).join('');
 }
